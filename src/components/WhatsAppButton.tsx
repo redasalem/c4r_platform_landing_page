@@ -9,10 +9,10 @@ export const WhatsAppButton = () => {
       href={`https://wa.me/${phoneNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-hover hover:scale-110 transition-smooth animate-pulse-scale"
+      className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-hover hover:scale-110 transition-smooth animate-pulse-scale hover:shadow-[0_0_30px_rgba(37,211,102,0.6)]"
       aria-label="Contact us on WhatsApp"
     >
-      <MessageCircle className="w-8 h-8" />
+      <MessageCircle className="w-9 h-9" />
     </a>
   );
 };

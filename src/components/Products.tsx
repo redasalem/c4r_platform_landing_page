@@ -18,7 +18,7 @@ export const Products = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-20 bg-gradient-card">
+    <section id="products" className="py-20 bg-gradient-card">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

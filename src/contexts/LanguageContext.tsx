@@ -21,6 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title': 'Premium Car Rental',
     'hero.subtitle': 'Experience luxury and comfort with C4R - Your trusted partner for quality vehicles',
     'hero.cta': 'Book Now',
+    'hero.testimonials': 'Client Reviews',
     
     // Products
     'products.title': 'Our Fleet',
@@ -55,6 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.title': 'تأجير سيارات فاخرة',
     'hero.subtitle': 'استمتع بالفخامة والراحة مع C4R - شريكك الموثوق للمركبات عالية الجودة',
     'hero.cta': 'احجز الآن',
+    'hero.testimonials': 'آراء العملاء',
     
     // Products
     'products.title': 'أسطولنا',

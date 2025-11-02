@@ -53,19 +53,29 @@ export const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="max-w-2xl"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-md">
             {t('hero.subtitle')}
           </p>
-          <Button
-            size="lg"
-            className="bg-gradient-hero text-white hover:shadow-hover transition-smooth text-lg px-8 py-6"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {t('hero.cta')}
-          </Button>
+          <div className="flex flex-wrap gap-4">
+            <Button
+              size="lg"
+              className="bg-gradient-hero text-white hover:shadow-hover transition-smooth text-lg px-8 py-6 shadow-lg"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('hero.cta')}
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:border-white/50 transition-smooth text-lg px-8 py-6 shadow-lg"
+              onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('hero.testimonials')}
+            </Button>
+          </div>
         </motion.div>
       </div>
 

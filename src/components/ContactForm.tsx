@@ -50,10 +50,10 @@ export const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-card">
+    <section id="contact" className="py-24 bg-gradient-card relative">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-[auto,1fr] gap-8 items-start">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-[auto,1fr] gap-12 items-center">
             {/* Payment Icon */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -62,8 +62,8 @@ export const ContactForm = () => {
               transition={{ duration: 0.6 }}
               className="flex justify-center md:justify-start"
             >
-              <div className="bg-gradient-hero p-8 rounded-2xl shadow-hover">
-                <CreditCard className="w-16 h-16 text-white" />
+              <div className="bg-gradient-hero p-10 rounded-3xl shadow-hover hover:shadow-[0_12px_40px_-6px_hsl(214_100%_45%/0.4)] transition-smooth">
+                <CreditCard className="w-20 h-20 text-white" />
               </div>
             </motion.div>
 
@@ -73,8 +73,14 @@ export const ContactForm = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex-1"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('payment.title')}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-hero bg-clip-text text-transparent">
+                {t('payment.title')}
+              </h2>
+              <p className="text-muted-foreground mb-8 text-lg">
+                Get in touch with us for your car rental needs
+              </p>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
