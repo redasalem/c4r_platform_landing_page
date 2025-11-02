@@ -18,17 +18,21 @@ export const Products = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="products" className="py-20 bg-gradient-card">
+    <section id="products" className="py-24 bg-gradient-card">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('products.title')}</h2>
-          <p className="text-xl text-muted-foreground">{t('products.subtitle')}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">
+            {t('products.title')}
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t('products.subtitle')}
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -42,8 +46,8 @@ export const Products = () => {
               whileHover={{ scale: 1.05, y: -10 }}
               className="transition-smooth"
             >
-              <Card className="overflow-hidden shadow-card hover:shadow-hover transition-smooth border-border">
-                <div className="relative h-48 overflow-hidden">
+              <Card className="overflow-hidden shadow-card hover:shadow-hover transition-smooth border-border h-full bg-card">
+                <div className="relative h-52 overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}

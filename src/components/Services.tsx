@@ -27,6 +27,7 @@ export const Services = () => {
     let scrollPosition = 0;
     const scrollSpeed = 1;
     const itemWidth = 320; // card width + gap
+    let animationFrameId: number;
     
     const scroll = () => {
       scrollPosition += scrollSpeed;
@@ -36,12 +37,16 @@ export const Services = () => {
         scrollPosition = 0;
       }
       
-      scrollContainer.scrollLeft = scrollPosition;
+      if (scrollContainer) {
+        scrollContainer.scrollLeft = scrollPosition;
+      }
+      
+      animationFrameId = requestAnimationFrame(scroll);
     };
 
-    const intervalId = setInterval(scroll, 30);
+    animationFrameId = requestAnimationFrame(scroll);
 
-    return () => clearInterval(intervalId);
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
   // Duplicate services for infinite effect
@@ -69,10 +74,14 @@ export const Services = () => {
       </div>
 
       {/* Infinite Carousel */}
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
       <div 
         ref={scrollRef}
-        className="flex gap-6 overflow-x-hidden scroll-smooth px-4"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex gap-6 overflow-x-hidden scroll-smooth px-4 hide-scrollbar"
       >
         {duplicatedServices.map((service, index) => (
           <motion.div
