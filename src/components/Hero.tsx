@@ -1,21 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import heroCar1 from '@/assets/hero-car-1.jpg';
 import heroCar2 from '@/assets/hero-car-2.jpg';
 import heroCar3 from '@/assets/hero-car-3.jpg';
+import heroCar5 from '@/assets/hero_car5.jpg';
 
 const slides = [
   { image: heroCar1, title: 'Luxury Sports Cars' },
   { image: heroCar2, title: 'Premium SUVs' },
   { image: heroCar3, title: 'Elegant Sedans' },
+  { image: heroCar5, title: 'Range Rover' },
 ];
 
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useLanguage();
+  const { theme } = useTheme();
+
+  // Auto-scroll every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -33,10 +46,16 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
           className="absolute inset-0"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10" />
+          <div 
+            className={`absolute inset-0 z-10 ${
+              theme === 'dark'
+                ? 'bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent'
+                : 'bg-gradient-to-t from-slate-900/70 via-slate-900/30 to-transparent'
+            }`}
+          />
           <img
             src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
@@ -50,19 +69,27 @@ export const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           className="max-w-2xl"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+          <h1 
+            className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl text-white"
+          >
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-md">
+          <p 
+            className="text-xl md:text-2xl mb-8 drop-shadow-lg text-white/90"
+          >
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4">
             <Button
               size="lg"
-              className="bg-gradient-hero text-white hover:shadow-hover transition-smooth text-lg px-8 py-6 shadow-lg"
+              className={`text-lg px-8 py-6 rounded-2xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                theme === 'dark'
+                  ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-500 hover:via-pink-500 hover:to-purple-500 text-white shadow-lg shadow-purple-500/50'
+                  : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 text-white shadow-lg shadow-blue-500/50'
+              }`}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.cta')}
@@ -70,7 +97,11 @@ export const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:border-white/50 transition-smooth text-lg px-8 py-6 shadow-lg"
+              className={`text-lg px-8 py-6 rounded-2xl font-bold backdrop-blur-md border-2 transition-all duration-300 hover:scale-105 ${
+                theme === 'dark'
+                  ? 'bg-white/10 text-white border-white/30 hover:bg-white/20 hover:border-white/50 shadow-lg'
+                  : 'bg-white/20 text-white border-white/40 hover:bg-white/30 hover:border-white/60 shadow-lg'
+              }`}
               onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {t('hero.testimonials')}
@@ -82,13 +113,21 @@ export const Hero = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-smooth"
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
+          theme === 'dark'
+            ? 'bg-white/10 hover:bg-white/20 text-white border-white/20 shadow-lg shadow-purple-500/20'
+            : 'bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg'
+        }`}
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-smooth"
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
+          theme === 'dark'
+            ? 'bg-white/10 hover:bg-white/20 text-white border-white/20 shadow-lg shadow-purple-500/20'
+            : 'bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg'
+        }`}
       >
         <ChevronRight className="w-6 h-6" />
       </button>
@@ -99,8 +138,14 @@ export const Hero = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-smooth ${
-              index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide 
+                ? theme === 'dark'
+                  ? 'bg-gradient-to-r from-purple-400 to-pink-400 w-8'
+                  : 'bg-gradient-to-r from-blue-400 to-purple-500 w-8'
+                : theme === 'dark'
+                ? 'bg-white/30 hover:bg-white/50 w-2'
+                : 'bg-white/40 hover:bg-white/60 w-2'
             }`}
           />
         ))}
