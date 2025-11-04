@@ -17,6 +17,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services': 'Services',
     'contact': 'Contact',
     'Testimonials':'Testimonials',
+    'Our Collection':'Our Collection',
     
     // Hero
     'hero.title': 'Welcome to C4R Platform',
@@ -82,9 +83,34 @@ const translations: Record<Language, Record<string, string>> = {
 'Regular safety checks': 'Regular safety checks',
 'Thorough cleaning after each ride': 'Thorough cleaning after each ride',
 'Safe and reliable for passengers': 'Safe and reliable for passengers',
+'Empower your car rental business and take self-drive travel experience to the next level with the Caren Car Rental Platform. Check out our offering for independent car rentals, RV and campervan rentals and online resellers and OTAs.':'Empower your car rental business and take self-drive travel experience to the next level with the Caren Car Rental Platform. Check out our offering for independent car rentals, RV and campervan rentals and online resellers and OTAs.',
 
 'Book Now': 'Book Now',
-'Services':'Services'
+'Services':'Services',
+'Email us!':'Email us!',
+'Our Partners':'Our Partners',
+'Discover Your Dream Ride':'Discover Your Dream Ride',
+"Explore our curated selection of premium vehicles, each crafted to deliver an unparalleled driving experience":'Explore our curated selection of premium vehicles, each crafted to deliver an unparalleled driving experience',
+'View Details':'View Details',
+'Premium Cars':'Premium Cars',
+'Brands':'Brands',
+'Support':'Support',
+'Satisfaction':'Satisfaction',
+  "Contact us for inquiries or reservations": "Contact us for inquiries or reservations",
+  "Name": "Name",
+  "Email": "Email",
+  "Subject": "Subject",
+  "Project inquiry": "Project inquiry",
+  "Message": "Message",
+  "Sending...": "Sending...",
+  "Send Message": "Send Message",
+  "Message sent successfully! I will get back to you soon.": "Message sent successfully! I will get back to you soon.",
+  "Error sending message. Please try again.": "Error sending message. Please try again.",
+  'Your name':'Your name',
+  'your@email.com':'your@email.com',
+  "Your message here...":"Your message here...",
+  'Location':'Location',
+  'Riyadh City, Saudi Arabia':'Riyadh City, Saudi Arabia'
   },
   عربى: {
     // Navbar
@@ -93,6 +119,16 @@ const translations: Record<Language, Record<string, string>> = {
     'contact': 'اتصل بنا',
     'Testimonials': 'آراء العملاء',
     'hero.cta': 'احجز الان',
+    'Our Collection':'مجموعتنا',
+    'View Details':'معرفة التفاصيل',
+    'Premium Cars':'سيارات فاخرة',
+    'Brands':'العلامات التجارية',
+    'Support':'دعم',
+    'Satisfaction':'الرضا عنا',
+    'Your name':'اكتب اسمك هنا',
+    'your@email.com':'اكتب بريدك الالكتروني هنا',
+    "Your message here...":"اكتب رسالتك هنا",
+    'Location':'الموقع',
     
     // Hero
     'hero.title': 'مرحباً بكم في منصة C4R',
@@ -123,6 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.partners': 'شركاؤنا',
     'footer.rights': 'جميع الحقوق محفوظة',
     'Services':'الخدمات',
+    'Email us!':'راسلنا على الايميل',
     'services.flexPlans.title': 'خطط مرنة تناسب أسلوب حياتك واحتياجاتك المختلفة',
 'services.flexPlans.subtitle': 'خيارات تأجير السيارات اليومية أو الشهرية حسب تفضيلاتك',
 'services.flexPlans.feature1': 'خطط تأجير مرنة',
@@ -193,8 +230,22 @@ const translations: Record<Language, Record<string, string>> = {
 'Regular safety checks': 'فحوصات سلامة منتظمة',
 'Thorough cleaning after each ride': 'تنظيف شامل بعد كل رحلة',
 'Safe and reliable for passengers': 'آمنة وموثوقة للركاب',
-
-'Book Now': 'احجز الآن',
+'Empower your car rental business and take self-drive travel experience to the next level with the Caren Car Rental Platform. Check out our offering for independent car rentals, RV and campervan rentals and online resellers and OTAs.':'عزز تجربة تأجير السيارات لديك، وارتقِ بتجربة السفر بنفسك مع منصة كارين لتأجير السيارات. اطلع على عروضنا لتأجير السيارات المستقلة، وتأجير المركبات الترفيهية والعربات المتنقلة، ووكلاء البيع عبر الإنترنت، ووكالات السفر عبر الإنترنت.',
+'book Now': 'احجز الآن',
+'Our Partners':'شركاؤنا',
+'Discover Your Dream Ride':'اكتشف رحلة أحلامك',
+"Explore our curated selection of premium vehicles, each crafted to deliver an unparalleled driving experience":'استكشف مجموعتنا المختارة بعناية من المركبات الفاخرة، كل منها مصممة لتقديم تجربة قيادة لا مثيل لها',
+  "Contact us for inquiries or reservations": "تواصل معنا للاستفسار اوالحجز",
+  "Name": "الاسم",
+  "Email": "البريد الإلكتروني",
+  "Subject": "الموضوع",
+  "Project inquiry": "استفسار عن مشروع",
+  "Message": "الرسالة",
+  "Sending...": "جاري الإرسال...",
+  "Send Message": "أرسل الرسالة",
+  "Message sent successfully! I will get back to you soon.": "تم إرسال الرسالة بنجاح! سأرد عليك قريبًا.",
+  "Error sending message. Please try again.": "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.",
+  'Riyadh City, Saudi Arabia':'الرياض - السعودية',
   }
 };
 

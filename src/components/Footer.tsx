@@ -1,101 +1,185 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import logo from '@/assets/logo.png';
+import partner1 from '@/assets/p-1.jpeg';
+import partner2 from '@/assets/p-2.jpeg';
+import partner3 from '@/assets/p-3.jpeg';
+import partner4 from '@/assets/p-4.jpeg';
+import { Car, Instagram, Twitter } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
 
-const partners = [
-  { name: 'Partner 1', logo: 'P1' },
-  { name: 'Partner 2', logo: 'P2' },
-  { name: 'Partner 3', logo: 'P3' },
-  { name: 'Partner 4', logo: 'P4' },
-];
+const partners = [partner1, partner2, partner3, partner4];
 
 export const Footer = () => {
+  const { theme } = useTheme();
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-card border-t border-border py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-8">
-          {/* Logo & Tagline */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img src={logo} alt="C4R Logo" className="h-12 w-12 object-contain" />
-              <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+    <footer className="relative bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 text-black dark:text-white py-16 overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col items-center gap-12">
+          {/* Logo & Name */}
+          <div className="flex items-center gap-4 group cursor-pointer animate-fade-in">
+            <div
+              className={`relative w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-2xl ${
+                theme === 'dark'
+                  ? 'bg-gradient-to-br from-purple-500 to-pink-500 shadow-purple-500/50'
+                  : 'bg-gradient-to-br from-blue-500 to-purple-500 shadow-blue-500/50'
+              }`}
+            >
+              <Car className="w-9 h-9 text-white" strokeWidth={2.5} />
+              <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            <div className="flex flex-col">
+              <span
+                className={`text-3xl sm:text-4xl font-black tracking-tight transition-all duration-300 bg-gradient-to-r bg-clip-text text-transparent ${
+                  theme === 'dark'
+                    ? 'from-purple-400 via-pink-400 to-purple-400'
+                    : 'from-blue-600 via-purple-600 to-pink-600'
+                }`}
+              >
                 C4R
               </span>
+              <span className={`text-sm font-semibold ${theme === 'dark' ? 'text-purple-300' : 'text-purple-600'}`}>
+                {t('footer.tagline')}
+              </span>
             </div>
-            <p className="text-muted-foreground">{t('footer.tagline')}</p>
           </div>
 
-          {/* Partners */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">{t('footer.partners')}</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  className="bg-muted rounded-lg p-4 flex items-center justify-center font-bold text-muted-foreground"
-                >
-                  {partner.logo}
-                </div>
-              ))}
+          {/* Description */}
+          <div className="flex flex-col items-center gap-4 text-center max-w-3xl animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+              {t('Empower your car rental business and take self-drive travel experience to the next level with the Caren Car Rental Platform. Check out our offering for independent car rentals, RV and campervan rentals and online resellers and OTAs.')}
+            </p>
+          </div>
+
+          {/* Partners Carousel */}
+          <div className="w-full max-w-full overflow-hidden animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <h2 className="font-bold text-center text-3xl mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              {t('Our Partners')}
+            </h2>
+            <div className="relative">
+              <div 
+                className="flex gap-8"
+                style={{
+                  animation: 'scroll 30s linear infinite',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+                onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
+              >
+                {[...partners, ...partners].map((logo, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 transform hover:scale-110 transition-all duration-500 hover:shadow-2xl"
+                  >
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                      <img
+                        src={logo}
+                        alt={`Partner ${(index % partners.length) + 1}`}
+                        className="relative h-32 w-24 md:h-40 md:w-32 object-contain rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+          
+          <style>{`
+            @keyframes scroll {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+          `}</style>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <div className="space-y-2">
-              <a href="#about" className="block text-muted-foreground hover:text-primary transition-smooth">
-                {t('nav.about')}
-              </a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
-                {t('nav.services')}
-              </a>
-              <a href="#contact" className="block text-muted-foreground hover:text-primary transition-smooth">
-                {t('nav.contact')}
-              </a>
+          <div className="w-full max-w-4xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col gap-6 items-center p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 shadow-xl">
+              <h3 className="font-bold text-3xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                {t('Quick Links')}
+              </h3>
+              <div className="flex items-center justify-center gap-8 flex-wrap">
+                <a
+                  href="#About"
+                  className="relative text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-all duration-300 group"
+                >
+                  {t('about')}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
+                </a>
+                <a
+                  href="#Services"
+                  className="relative text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-all duration-300 group"
+                >
+                  {t('Services')}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
+                </a>
+                <a
+                  href="#testimonials"
+                  className="relative text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-all duration-300 group"
+                >
+                  {t('Testimonials')}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
+                </a>
+                <a
+                  href="#contact"
+                  className="relative text-lg font-semibold text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-all duration-300 group"
+                >
+                  {t('contact')}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Social & Copyright */}
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © 2025 C4R. {t('footer.rights')}.
-          </p>
-
-          <div className="flex items-center gap-4">
+          {/* Social Icons */}
+          <div className="flex gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <a
-              href="https://twitter.com"
+              href="https://x.com/C4R_Platform"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="group relative p-4 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
+              <Twitter className="w-6 h-6 relative z-10" />
+              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://www.instagram.com/C4R_Platform/#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="group relative p-4 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 text-white hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-110"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <Instagram className="w-6 h-6 relative z-10" />
+              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@C4R.Platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-xl bg-gradient-to-br from-gray-900 to-black text-white hover:shadow-2xl hover:shadow-gray-900/50 transition-all duration-300 hover:scale-110"
+            >
+              <svg className="w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
               </svg>
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
+              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
           </div>
+
+          {/* Divider */}
+          <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+          {/* Copyright */}
+          <p className="text-gray-500 dark:text-gray-400 text-lg font-semibold text-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            © {new Date().getFullYear()} C4R Platform. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

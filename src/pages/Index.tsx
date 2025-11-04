@@ -1,13 +1,14 @@
 import { Hero } from '@/components/Hero';
-import { Products } from '@/components/Products';
 import { Testimonials } from '@/components/Testimonials';
-import { ContactForm } from '@/components/ContactForm';
-import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { Navbar } from '@/components/Navbar';
 import Services  from '@/components/Services';
+import { EmailButton } from '@/components/EmailButton';
+import { Footer } from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
+import Products from '@/components/Products';
 
 
 
@@ -26,6 +27,7 @@ const Index = () => {
           <ContactForm />
           <Footer />
           <WhatsAppButton />
+          <EmailButton />
         </div>
       </LanguageProvider>
     </ThemeProvider>
