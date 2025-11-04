@@ -69,20 +69,6 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-3 group cursor-pointer">
            <img src="/apple-touch-icon.png" alt="" className='w-36 h-40 !rounded-[20px]' />
-            <div className="flex flex-col">
-              <span
-                className={`text-2xl sm:text-3xl font-black tracking-tight transition-all duration-300 bg-gradient-to-r bg-clip-text text-transparent ${
-                  theme === 'dark'
-                    ? 'from-purple-400 via-pink-400 to-purple-400'
-                    : 'from-blue-600 via-purple-600 to-pink-600'
-                }`}
-              >
-                C4R
-              </span>
-              <span className={`text-xs font-semibold ${theme === 'dark' ? 'text-purple-300' : 'text-purple-600'}`}>
-                {t('footer.tagline')}
-              </span>
-            </div>
           </div>
 
           {/* Desktop Nav Links */}
