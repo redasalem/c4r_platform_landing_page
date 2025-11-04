@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Car, Clock, Home, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import serv5 from '../assets/serv5.webp';
@@ -7,24 +7,12 @@ import serv1 from '../assets/serv1.webp';
 import serv2 from '../assets/serv2.webp';
 import serv3 from '../assets/serv3.webp';
 
-
-type Feature = {
-  icon: React.ElementType;
-  textKey: string;
-};
-
-type Service = {
-  id: string;
-  image: string;
-  titleKey: string;
-  subtitleKey: string;
-  features: Feature[];
-};
+type Feature = { icon: React.ElementType; textKey: string; };
+type Service = { id: string; image: string; titleKey: string; subtitleKey: string; features: Feature[]; };
 
 const SERVICES: Service[] = [
   {
-    id: "flex-plans",
-    image:serv1,
+    id: "flex-plans", image:serv1,
     titleKey: "Daily or monthly car rentals",
     subtitleKey: "Flexible plans to suit your lifestyle and various needs",
     features: [
@@ -34,8 +22,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "quick-commutes",
-    image:serv2,
+    id: "quick-commutes", image:serv2,
     titleKey: "Ideal for quick commutes, meetings and private trips",
     subtitleKey: "Reliable cars for time-sensitive rides and business trips",
     features: [
@@ -45,8 +32,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "no-branch-needed",
-    image:serv3,
+    id: "no-branch-needed", image:serv3,
     titleKey: "Your comfort is our priority",
     subtitleKey: "Book, unlock and drive — no branch visits required",
     features: [
@@ -56,8 +42,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "premium-fleet",
-    image:serv4,
+    id: "premium-fleet", image:serv4,
     titleKey: "Car availability in bulk",
     subtitleKey:"Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
     features: [
@@ -67,8 +52,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "concierge-service",
-    image:serv5,
+    id: "concierge-service", image:serv5,
     titleKey: "Reception and delivery",
     subtitleKey: "A comfortable start to your trip, with punctual service",
     features: [
@@ -155,7 +139,7 @@ export default function Services() {
           {/* Navigation Buttons */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 -translate-x-4 md:-translate-x-6"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 -translate-x-4 md:-translate-x-6 nav-btn"
             aria-label="Previous"
           >
             <ChevronLeft className="w-6 h-6 text-purple-600 dark:text-purple-400" />
@@ -163,7 +147,7 @@ export default function Services() {
           
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 translate-x-4 md:translate-x-6"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 translate-x-4 md:translate-x-6 nav-btn"
             aria-label="Next"
           >
             <ChevronRight className="w-6 h-6 text-purple-600 dark:text-purple-400" />
@@ -174,19 +158,20 @@ export default function Services() {
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
-            className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing pb-4"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing pb-4 flex snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch', paddingInline: '1rem' }}
             aria-roledescription="carousel"
           >
-            <div className="flex gap-6 md:gap-8 items-stretch px-2">
+            <div className="flex gap-[clamp(1rem,2vw,2rem)] items-stretch">
               {SERVICES.map((s, idx) => (
                 <article
                   data-carousel-item
                   key={`${s.id}-${idx}`}
                   onClick={handleCardClick}
-                  className="w-[340px] md:w-[380px] lg:w-[420px] flex-shrink-0 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-slate-200/50 dark:border-slate-700/50 group"
+                  className="flex-shrink-0 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-slate-200/50 dark:border-slate-700/50 group snap-start"
+                  style={{ flex: "0 0 auto", width: "min(90%, 420px)" }}
                 >
-                  <div className="relative h-[240px] md:h-[280px] lg:h-[320px] overflow-hidden">
+                  <div className="relative" style={{ height: "clamp(200px,25vw,320px)" }}>
                     <img
                       src={s.image}
                       alt={t(s.titleKey)}
@@ -202,10 +187,10 @@ export default function Services() {
                   </div>
 
                   <div className="p-6 md:p-7 lg:p-8">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <h3 className="text-[clamp(1rem,2.5vw,1.5rem)] font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       {t(s.titleKey)}
                     </h3>
-                    <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-5 line-clamp-2">
+                    <p className="text-[clamp(0.875rem,2vw,1rem)] text-slate-600 dark:text-slate-400 mb-5 line-clamp-2">
                       {t(s.subtitleKey)}
                     </p>
 
@@ -217,7 +202,7 @@ export default function Services() {
                             <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
                               <Icon className="w-4 h-4 text-white" />
                             </div>
-                            <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
+                            <p className="text-[clamp(0.875rem,2vw,1rem)] text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
                               {t(f.textKey)}
                             </p>
                           </div>
@@ -250,6 +235,10 @@ export default function Services() {
       <style>{`
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        @media (max-width: 768px) {
+          .nav-btn { padding: 0.5rem; }
+          .nav-btn svg { width: 1.25rem; height: 1.25rem; }
+        }
       `}</style>
     </section>
   );
