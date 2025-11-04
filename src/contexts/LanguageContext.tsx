@@ -29,7 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     'products.title': 'Our Fleet',
     'products.subtitle': 'Choose from our wide selection of premium vehicles',
     'products.viewDetails': 'View Details',
-    
+    'Reception and delivery':'Reception and delivery',
     // Testimonials
     'testimonials.title': 'What Our Clients Say',
     'testimonials.subtitle': 'Trusted by thousands of satisfied customers',
@@ -43,12 +43,13 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.message': 'Message',
     'payment.submit': 'Send Message',
     'payment.success': 'Message sent successfully!',
+    'A comfortable start to your trip, with punctual service':'A comfortable start to your trip, with punctual service',
     
     // Footer
     'footer.tagline': 'Your trusted car rental partner',
     'footer.partners': 'Our Partners',
     'footer.rights': 'All rights reserved',
-   'Flexible plans to suit your lifestyle and various needs': 'Flexible plans to suit your lifestyle and various needs',
+    'Daily or monthly car rentals':'Daily or monthly car rentals',
 'Daily or monthly car rental options tailored to your preferences': 'Daily or monthly car rental options tailored to your preferences',
 'Flexible rental plans': 'Flexible rental plans',
 'Hourly car rental with driver': 'Hourly car rental with driver',
@@ -120,6 +121,9 @@ const translations: Record<Language, Record<string, string>> = {
   'Submit Review':'Submit Review',
   'Terms & Conditions':'Terms & Conditions',
   'Privacy Policy':'Privacy Policy',
+  'Car availability in bulk':'Car availability in bulk',
+  'Experience the luxury car experience':'Experience the luxury car experience',
+  'Enjoy superior performance and absolute luxury with every journey you drive':'Enjoy superior performance and absolute luxury with every journey you drive',
   },
   عربى: {
     // Navbar
@@ -137,8 +141,10 @@ const translations: Record<Language, Record<string, string>> = {
     'Your name':'اكتب اسمك هنا',
     'your@email.com':'اكتب بريدك الالكتروني هنا',
     "Your message here...":"اكتب رسالتك هنا",
+    'Car availability in bulk':'توافر السيارات بكميات كبيرة',
     'Location':'الموقع',
     'Role':' وظيفتك او دورك',
+    'Enjoy superior performance and absolute luxury with every journey you drive':'استمتع بالأداء المتفوق والفخامة المطلقة مع كل رحلة تقودها',
     'Rating':'تقيمك',
     'Your Review':'شاركنا رايك',
     'We would love to hear about your experience':'نود ان نسمع تجربتك عنا',
@@ -147,11 +153,16 @@ const translations: Record<Language, Record<string, string>> = {
     'Submit Review':'ارسال تعليقك',
     'Terms & Conditions':'الشروط والاحكام',
     "Privacy Policy":'سياسة الخصوصية',
+    'Daily or monthly car rentals':'تأجير السيارات يوميًا أو شهريًا',
+    'Flexible plans to suit your lifestyle and various needs':'خطط مرنة لتناسب نمط حياتك واحتياجاتك المختلفة',
+    'Experience the luxury car experience':'تجربة السيارات الفاخرة',
     
     // Hero
     'hero.title': 'مرحباً بكم في منصة C4R',
     'hero.subtitle': 'تعد المنصة وسيطك المثالي لتأجير السيارات بخدمات مرنة ومتنوعة تلبي مختلف الاحتياجات. ونحرص على تقديم تجربة تأجير احترافية تجمع بين السهولة، والموثوقية، والكفاءة، لتلبية جميع المتطلبات وبأسعار تنافسية',
     'hero.testimonials': 'آراء العملاء',
+    "Reception and delivery":'الاستقبال والتسليم',
+    'A comfortable start to your trip, with punctual service':'بداية مريحة لرحلتك مع خدمة دقيقة',
     
     // Products
     'products.title': 'أسطولنا',
@@ -213,7 +224,6 @@ const translations: Record<Language, Record<string, string>> = {
 'services.safety.feature1': 'فحوصات سلامة منتظمة',
 'services.safety.feature2': 'تنظيف شامل بعد كل رحلة',
 'services.safety.feature3': 'آمنة وموثوقة للركاب',
-'Flexible plans to suit your lifestyle and various needs': 'خطط مرنة تناسب أسلوب حياتك واحتياجاتك المختلفة',
 'Daily or monthly car rental options tailored to your preferences': 'خيارات تأجير السيارات اليومية أو الشهرية حسب تفضيلاتك',
 'Flexible rental plans': 'خطط تأجير مرنة',
 'Hourly car rental with driver': 'تأجير السيارات بالساعة مع سائق',

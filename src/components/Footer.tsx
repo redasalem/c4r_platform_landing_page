@@ -27,11 +27,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-12">
           {/* Logo & Name */}
           <div className="flex items-center gap-3 group cursor-pointer">
-            <img
-              src="/apple-touch-icon.png"
-              alt=""
-              className="w-36 h-40 !rounded-[20px]"
-            />
+             <img src="/apple-touch-icon.png" alt="logo" className="w-24 h-20 rounded-xl" />
            
           </div>
 
@@ -47,56 +43,35 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Partners Carousel */}
-          <div
-            className="w-full max-w-full overflow-hidden animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <h2 className="font-bold text-center text-3xl mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              {t("Our Partners")}
-            </h2>
-            <div className="relative">
-              <div
-                className="flex gap-8"
-                style={{
-                  animation: "scroll 30s linear infinite",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.animationPlayState = "paused")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.animationPlayState = "running")
-                }
-              >
-                {[...partners, ...partners].map((logo, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 transform hover:scale-110 transition-all duration-500 hover:shadow-2xl"
-                  >
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-                      <img
-                        src={logo}
-                        alt={`Partner ${(index % partners.length) + 1}`}
-                        className="relative h-32 w-24 md:h-40 md:w-32 object-contain rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+         {/* Partners Carousel - Static Version */}
+<div
+  className="w-full max-w-full overflow-hidden"
+  style={{ animationDelay: "0.2s" }}
+>
+  <h2 className="font-bold text-center text-3xl mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+    {t("Our Partners")}
+  </h2>
+  <div className="relative">
+    <div className="flex gap-8 justify-center flex-wrap">
+      {partners.map((logo, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0"
+        >
+          <div className="relative">
+            <img
+              src={logo}
+              alt={`Partner ${index + 1}`}
+              className="relative h-32 w-24 md:h-40 md:w-32 object-contain rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
+            />
           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
-          <style>{`
-            @keyframes scroll {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-          `}</style>
+
 
           {/* Quick Links */}
           <div

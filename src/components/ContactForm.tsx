@@ -67,7 +67,7 @@ export default function ContactForm() {
               {t('Get in Touch')}
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+          <h2 className="mt-2 text-4xl md:text-5xl lg:text-4xl font-semibold mb-4 text-violet-600 dark:text-yellow-600">
             {t('Contact us for inquiries or reservations')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto" />

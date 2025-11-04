@@ -84,7 +84,7 @@ export const Testimonials = () => {
       <Toaster position="top-right" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent">{t('testimonials.title')}</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold mb-4 text-violet-600 dark:text-yellow-600">{t('testimonials.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t('testimonials.subtitle')}</p>
         </div>
 
@@ -126,7 +126,7 @@ export const Testimonials = () => {
           <Card className="shadow-2xl border-2 border-border/50 backdrop-blur-sm bg-card/95 overflow-hidden">
             <CardContent className="p-8 md:p-10">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-2 bg-gradient-hero bg-clip-text text-transparent">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
+                <h3 className="text-4xl md:text-5xl lg:text-4xl font-semibold mb-4 text-violet-600 dark:text-yellow-600">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
                 <p className="text-muted-foreground">{t('We would love to hear about your experience') || 'نود أن نسمع عن تجربتك معنا'}</p>
               </div>
 

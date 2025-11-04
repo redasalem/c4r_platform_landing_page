@@ -53,153 +53,106 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? theme === 'dark'
-            ? 'bg-slate-900/95 backdrop-blur-xl shadow-2xl shadow-purple-500/20 border-b border-purple-500/30'
-            : 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-purple-200/50 border-b border-purple-200'
-          : theme === 'dark'
-          ? 'bg-slate-900/80 backdrop-blur-lg border-b border-purple-500/20'
-          : 'bg-white/80 backdrop-blur-lg border-b border-purple-200/50'
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-           <img src="/apple-touch-icon.png" alt="" className='w-36 h-40 !rounded-[20px]' />
-          </div>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                className={`relative px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 group ${
-                  theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
-                }`}
-              >
-                <span className="relative z-10">{t(link.key)}</span>
-                <div
-                  className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20'
-                      : 'bg-gradient-to-r from-blue-500/10 to-purple-500/10'
-                  }`}
-                ></div>
-                <div
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500'
-                      : 'bg-gradient-to-r from-blue-500 to-purple-500'
-                  }`}
-                ></div>
-              </a>
-            ))}
-          </div>
-
-          {/* Right Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="hidden md:flex items-center gap-2">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-purple-500/30 border border-slate-700'
-                      : 'bg-white text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm'
-                  }`}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-
-            <button
-              onClick={toggleLanguage}
-              className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-300 hover:scale-105 ${
-                theme === 'dark'
-                  ? 'bg-slate-800/50 text-gray-300 hover:text-white hover:bg-purple-500/30 border border-slate-700'
-                  : 'bg-white text-gray-700 hover:text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm'
-              }`}
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">{language.toUpperCase()}</span>
-            </button>
-
-            <button
-              onClick={toggleTheme}
-              className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center transition-all duration-500 hover:scale-105 hover:rotate-180 ${
-                theme === 'dark'
-                  ? 'bg-slate-800/50 text-yellow-400 hover:bg-yellow-500/20 border border-slate-700'
-                  : 'bg-white text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm'
-              }`}
-            >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                theme === 'dark'
-                  ? 'bg-slate-800/50 text-gray-300 hover:text-white border border-slate-700'
-                  : 'bg-white text-gray-700 hover:text-purple-600 border border-gray-200 shadow-sm'
-              }`}
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
+   <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-xl shadow-2xl shadow-purple-200/50 border-b border-purple-200 transition-all duration-500">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-between h-20">
+      {/* Logo */}
+      <div className="flex items-center gap-3 group cursor-pointer">
+        <img src="/apple-touch-icon.png" alt="logo" className="w-24 h-20 rounded-xl" />
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div
-          className={`px-4 pb-6 space-y-2 ${
-            theme === 'dark'
-              ? 'bg-slate-900/95 backdrop-blur-xl border-t border-purple-500/30'
-              : 'bg-white/95 backdrop-blur-xl border-t border-purple-200'
-          }`}
-        >
-          {navLinks.map((link) => (
+      {/* Desktop Nav Links */}
+      <div className="hidden lg:flex items-center gap-1">
+        {navLinks.map((link) => (
+          <a
+            key={link.id}
+            href={`#${link.id}`}
+            className="relative px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 text-gray-700 hover:text-gray-900"
+          >
+            <span className="relative z-10">{t(link.key)}</span>
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+          </a>
+        ))}
+      </div>
+
+      {/* Right Buttons */}
+      <div className="flex items-center gap-2 sm:gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          {socialLinks.map((social) => (
             <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                theme === 'dark'
-                  ? 'text-gray-300 hover:text-white hover:bg-purple-500/20'
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-purple-50'
-              }`}
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 bg-white text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm"
             >
-              {t(link.key)}
+              {social.icon}
             </a>
           ))}
-
-          <div className="flex items-center justify-center gap-3 pt-4 border-t border-purple-500/20">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                  theme === 'dark'
-                    ? 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-purple-500/30'
-                    : 'bg-purple-50 text-gray-600 hover:text-purple-600 hover:bg-purple-100'
-                }`}
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
         </div>
+
+        {/* Language Toggle */}
+        <button
+          onClick={toggleLanguage}
+          className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-300 hover:scale-105 bg-white text-gray-700 hover:text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm"
+        >
+          <Globe className="w-4 h-4" />
+          <span className="text-xs sm:text-sm">{language.toUpperCase()}</span>
+        </button>
+
+        {/* Theme Toggle (only button logic) */}
+        <button
+          onClick={toggleTheme}
+          className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center transition-all duration-500 hover:scale-105 hover:rotate-180 ${
+            theme === 'dark'
+              ? 'bg-slate-800/50 text-yellow-400 hover:bg-yellow-500/20 border border-slate-700'
+              : 'bg-white text-purple-600 hover:bg-purple-50 border border-gray-200 shadow-sm'
+          }`}
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-white text-gray-700 hover:text-purple-600 border border-gray-200 shadow-sm"
+        >
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
-    </nav>
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  <div className={`lg:hidden overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+    <div className="px-4 pb-6 space-y-2 bg-white/95 backdrop-blur-xl border-t border-purple-200">
+      {navLinks.map((link) => (
+        <a
+          key={link.id}
+          href={`#${link.id}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="block px-4 py-3 rounded-xl font-semibold transition-all duration-300 text-gray-700 hover:text-gray-900 hover:bg-purple-50"
+        >
+          {t(link.key)}
+        </a>
+      ))}
+
+      <div className="flex items-center justify-center gap-3 pt-4 border-t border-purple-200">
+        {socialLinks.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-purple-50 text-gray-600 hover:text-purple-600 hover:bg-purple-100"
+          >
+            {social.icon}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
   );
 };

@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Car, Clock, Home, Users } from "lucide-react";
+import React, { useRef, useState } from "react";
+import { Car, Clock, Home, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import car6 from "@/assets/car-6.jpg";
-import car5 from '@/assets/car-5.jpg';
-import carpr from '@/assets/pr1.jpg'
-
-
+import serv5 from '../assets/serv5.webp';
+import serv4 from '../assets/serv4.webp';
+import serv1 from '../assets/serv1.webp';
+import serv2 from '../assets/serv2.webp';
+import serv3 from '../assets/serv3.webp';
 
 
 type Feature = {
@@ -24,9 +24,9 @@ type Service = {
 const SERVICES: Service[] = [
   {
     id: "flex-plans",
-    image:car6,
-    titleKey: "Flexible plans to suit your lifestyle and various needs",
-    subtitleKey: "Daily or monthly car rental options tailored to your preferences",
+    image:serv1,
+    titleKey: "Daily or monthly car rentals",
+    subtitleKey: "Flexible plans to suit your lifestyle and various needs",
     features: [
       { icon: Car, textKey: "Flexible rental plans" },
       { icon: Clock, textKey: "Hourly car rental with driver" },
@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
   },
   {
     id: "quick-commutes",
-    image: car5,
+    image:serv2,
     titleKey: "Ideal for quick commutes, meetings and private trips",
     subtitleKey: "Reliable cars for time-sensitive rides and business trips",
     features: [
@@ -46,7 +46,7 @@ const SERVICES: Service[] = [
   },
   {
     id: "no-branch-needed",
-    image: carpr,
+    image:serv3,
     titleKey: "Your comfort is our priority",
     subtitleKey: "Book, unlock and drive — no branch visits required",
     features: [
@@ -57,9 +57,9 @@ const SERVICES: Service[] = [
   },
   {
     id: "premium-fleet",
-    image: "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=80",
-    titleKey: "Premium fleet selection",
-    subtitleKey: "Top-tier brands kept in pristine condition",
+    image:serv4,
+    titleKey: "Car availability in bulk",
+    subtitleKey:"Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
     features: [
       { icon: Car, textKey: "Luxury vehicles for all occasions" },
       { icon: Users, textKey: "Comfortable seating for passengers" },
@@ -68,73 +68,25 @@ const SERVICES: Service[] = [
   },
   {
     id: "concierge-service",
-    image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80",
-    titleKey: "Concierge & Delivery",
-    subtitleKey: "We deliver the car to your doorstep — white-glove service",
+    image:serv5,
+    titleKey: "Reception and delivery",
+    subtitleKey: "A comfortable start to your trip, with punctual service",
     features: [
       { icon: Home, textKey: "Car delivered to your location" },
       { icon: Car, textKey: "No need to visit a branch" },
       { icon: Clock, textKey: "Flexible schedules for your convenience" },
     ],
   },
-  {
-    id: "safety-cleaning",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    titleKey: "Sanitized & Inspected",
-    subtitleKey: "Daily inspections and premium sanitization for peace of mind",
-    features: [
-      { icon: Clock, textKey: "Regular safety checks" },
-      { icon: Home, textKey: "Thorough cleaning after each ride" },
-      { icon: Users, textKey: "Safe and reliable for passengers" },
-    ],
-  },
 ];
 
 export default function Services() {
   const { t } = useLanguage();
-  const items = [...SERVICES, ...SERVICES, ...SERVICES];
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const isHoveredRef = useRef(false);
-  const pointerDownRef = useRef(false);
-  const autoScrollInterval = 3000;
-  const [isReady, setIsReady] = useState(false);
   const dragState = useRef({ startX: 0, scrollLeft: 0, isDragging: false });
-
-  useEffect(() => setIsReady(true), []);
-
-  useEffect(() => {
-    if (!containerRef.current || !isReady) return;
-    const el = containerRef.current;
-    let intervalId: ReturnType<typeof setInterval>;
-
-    const smoothScroll = () => {
-      if (!el || isHoveredRef.current || pointerDownRef.current) return;
-      const firstChild = el.querySelector<HTMLElement>("[data-carousel-item]");
-      if (!firstChild) return;
-      const cardWidth = firstChild.offsetWidth + parseInt(getComputedStyle(firstChild).marginRight || "0");
-      el.scrollBy({ left: cardWidth, behavior: "smooth" });
-
-      setTimeout(() => {
-        const midPoint = el.scrollWidth / 3;
-        if (el.scrollLeft >= midPoint) el.scrollLeft = 0;
-      }, 500);
-    };
-
-    intervalId = setInterval(smoothScroll, autoScrollInterval);
-
-    return () => clearInterval(intervalId);
-  }, [isReady]);
-
-  const handleMouseEnter = () => (isHoveredRef.current = true);
-  const handleMouseLeave = () => {
-    isHoveredRef.current = false;
-    dragState.current.isDragging = false;
-  };
 
   function handlePointerDown(e: React.PointerEvent) {
     const el = containerRef.current;
     if (!el) return;
-    pointerDownRef.current = true;
     dragState.current.isDragging = false;
     dragState.current.startX = e.clientX;
     dragState.current.scrollLeft = el.scrollLeft;
@@ -143,16 +95,14 @@ export default function Services() {
   }
 
   function handlePointerMove(e: React.PointerEvent) {
-    if (!pointerDownRef.current) return;
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || !el.hasPointerCapture(e.pointerId)) return;
     const dx = dragState.current.startX - e.clientX;
     if (Math.abs(dx) > 5) dragState.current.isDragging = true;
     el.scrollLeft = dragState.current.scrollLeft + dx;
   }
 
   function handlePointerUp(e: React.PointerEvent<HTMLDivElement>) {
-    pointerDownRef.current = false;
     const el = e.currentTarget;
     if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
     if (containerRef.current) containerRef.current.style.scrollBehavior = 'smooth';
@@ -161,6 +111,22 @@ export default function Services() {
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (dragState.current.isDragging) e.preventDefault();
+  };
+
+  const scrollLeft = () => {
+    if (!containerRef.current) return;
+    const firstChild = containerRef.current.querySelector<HTMLElement>("[data-carousel-item]");
+    if (!firstChild) return;
+    const cardWidth = firstChild.offsetWidth + parseInt(getComputedStyle(firstChild).marginRight || "0");
+    containerRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    if (!containerRef.current) return;
+    const firstChild = containerRef.current.querySelector<HTMLElement>("[data-carousel-item]");
+    if (!firstChild) return;
+    const cardWidth = firstChild.offsetWidth + parseInt(getComputedStyle(firstChild).marginRight || "0");
+    containerRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
   };
 
   return (
@@ -185,80 +151,97 @@ export default function Services() {
           </p>
         </div>
 
-        <div
-          ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing pb-4"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-          aria-roledescription="carousel"
-        >
-          <div className="flex gap-6 md:gap-8 items-stretch px-2">
-            {items.map((s, idx) => (
-              <article
-                data-carousel-item
-                key={`${s.id}-${idx}`}
-                onClick={handleCardClick}
-                className="w-[340px] md:w-[380px] lg:w-[420px] flex-shrink-0 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-slate-200/50 dark:border-slate-700/50 group"
-              >
-                <div className="relative h-[240px] md:h-[280px] lg:h-[320px] overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={t(s.titleKey)}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    draggable="false"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
-                    <span className="text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                      {t("Premium")}
-                    </span>
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 -translate-x-4 md:-translate-x-6"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+          </button>
+          
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-slate-200 dark:border-slate-700 translate-x-4 md:translate-x-6"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+          </button>
+
+          <div
+            ref={containerRef}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing pb-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            aria-roledescription="carousel"
+          >
+            <div className="flex gap-6 md:gap-8 items-stretch px-2">
+              {SERVICES.map((s, idx) => (
+                <article
+                  data-carousel-item
+                  key={`${s.id}-${idx}`}
+                  onClick={handleCardClick}
+                  className="w-[340px] md:w-[380px] lg:w-[420px] flex-shrink-0 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-slate-200/50 dark:border-slate-700/50 group"
+                >
+                  <div className="relative h-[240px] md:h-[280px] lg:h-[320px] overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={t(s.titleKey)}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      draggable="false"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
+                      <span className="text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                        {t("Premium")}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-6 md:p-7 lg:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {t(s.titleKey)}
-                  </h3>
-                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-5 line-clamp-2">
-                    {t(s.subtitleKey)}
-                  </p>
+                  <div className="p-6 md:p-7 lg:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      {t(s.titleKey)}
+                    </h3>
+                    <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-5 line-clamp-2">
+                      {t(s.subtitleKey)}
+                    </p>
 
-                  <div className="space-y-3 mb-6">
-                    {s.features.map((f, i) => {
-                      const Icon = f.icon;
-                      return (
-                        <div key={i} className="flex items-start gap-3 group/item">
-                          <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
-                            <Icon className="w-4 h-4 text-white" />
+                    <div className="space-y-3 mb-6">
+                      {s.features.map((f, i) => {
+                        const Icon = f.icon;
+                        return (
+                          <div key={i} className="flex items-start gap-3 group/item">
+                            <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
+                              <Icon className="w-4 h-4 text-white" />
+                            </div>
+                            <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
+                              {t(f.textKey)}
+                            </p>
                           </div>
-                          <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
-                            {t(f.textKey)}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
 
-                  <a
-                    href="#contact"
-                    className="block w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                    onClick={(e) => { if (dragState.current.isDragging) e.preventDefault(); }}
-                  >
-                    {t("book Now")}
-                  </a>
-                </div>
-              </article>
-            ))}
+                    <a
+                      href="#contact"
+                      className="block w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                      onClick={(e) => { if (dragState.current.isDragging) e.preventDefault(); }}
+                    >
+                      {t("book Now")}
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="flex justify-center mt-8 gap-2">
           <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400 text-sm">
-            <div className="w-2 h-2 rounded-full bg-purple-600 dark:bg-purple-400 animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-600 dark:bg-purple-400"></div>
             <span>{t("Scroll or drag to explore")}</span>
           </div>
         </div>
