@@ -16,7 +16,7 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { id: 'about', key: 'about' },
+    { id: 'About', key: 'about' },
     { id: 'services', key: 'services' },
     { id: 'testimonials', key: 'Testimonials' },
     { id: 'contact', key: 'contact' }
@@ -68,16 +68,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div
-              className={`relative w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 ${
-                theme === 'dark'
-                  ? 'bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/50'
-                  : 'bg-gradient-to-br from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50'
-              }`}
-            >
-              <Car className="w-7 h-7 text-white animate-bounce" strokeWidth={2.5} />
-              <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+           <img src="/apple-touch-icon.png" alt="" className='w-36 h-40 !rounded-[20px]' />
             <div className="flex flex-col">
               <span
                 className={`text-2xl sm:text-3xl font-black tracking-tight transition-all duration-300 bg-gradient-to-r bg-clip-text text-transparent ${

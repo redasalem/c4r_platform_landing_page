@@ -5,7 +5,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 export const WhatsAppButton = () => {
   const {t} = useLanguage();
   const { theme } = useTheme();
-  const phoneNumber = '+966557209033';
+  const phoneNumber = '+966554118873';
   const message = encodeURIComponent('مرحباً! أود الاستفسار عن تأجير السيارات.');
 
   return (

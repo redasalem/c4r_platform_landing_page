@@ -110,7 +110,16 @@ const translations: Record<Language, Record<string, string>> = {
   'your@email.com':'your@email.com',
   "Your message here...":"Your message here...",
   'Location':'Location',
-  'Riyadh City, Saudi Arabia':'Riyadh City, Saudi Arabia'
+  'Riyadh City, Saudi Arabia':'Riyadh City, Saudi Arabia',
+  'Role':'Role',
+  'Rating':'Rating',
+  'Your Review':'Your Review',
+  'We would love to hear about your experience':'We would love to hear about your experience',
+  'Share Your Experience':'Share Your Experience',
+  'Thank you for your review!':'Thank you for your review!',
+  'Submit Review':'Submit Review',
+  'Terms & Conditions':'Terms & Conditions',
+  'Privacy Policy':'Privacy Policy',
   },
   عربى: {
     // Navbar
@@ -129,6 +138,15 @@ const translations: Record<Language, Record<string, string>> = {
     'your@email.com':'اكتب بريدك الالكتروني هنا',
     "Your message here...":"اكتب رسالتك هنا",
     'Location':'الموقع',
+    'Role':' وظيفتك او دورك',
+    'Rating':'تقيمك',
+    'Your Review':'شاركنا رايك',
+    'We would love to hear about your experience':'نود ان نسمع تجربتك عنا',
+    'Share Your Experience':'شارك تجربتك',
+    'Thank you for your review!':'شكرا لمشاركة رايك',
+    'Submit Review':'ارسال تعليقك',
+    'Terms & Conditions':'الشروط والاحكام',
+    "Privacy Policy":'سياسة الخصوصية',
     
     // Hero
     'hero.title': 'مرحباً بكم في منصة C4R',
