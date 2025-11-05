@@ -11,15 +11,15 @@ import client5 from '@/assets/client-5.jpg';
 import client6 from '@/assets/client-6.jpg';
 
 const initialTestimonials = [
-  { id: 1, name: 'أحمد المنصوري', role: 'رجل أعمال', image: client1, rating: 5, text: 'الخدمة ممتازة! السيارة كانت في حالة رائعة وعملية الحجز كانت سلسة جدًا. أنصح بها بشدة للمسافرين للأعمال.', color: 'from-blue-500 to-cyan-500' },
-  { id: 2, name: 'سارة محمد', role: 'أخصائية سياحة', image: client2, rating: 4, text: 'جعلت رحلتي السياحية خالية من التوتر. السيارة كانت فاخرة والدعم كان ممتازًا. سأستخدمها بالتأكيد مرة أخرى!', color: 'from-purple-500 to-pink-500' },
-  { id: 3, name: 'عمر حسن', role: 'رائد أعمال', image: client3, rating: 5, text: 'مجموعة رائعة من السيارات وأسعار منافسة. الفريق بذل جهده لتلبية احتياجاتي. خمس نجوم!', color: 'from-green-500 to-emerald-500' },
-  { id: 4, name: 'محمد علي', role: 'مدير مشروع', image: client4, rating: 5, text: 'تجربة رائعة من البداية للنهاية. السيارة نظيفة ومريحة، والخدمة ممتازة للغاية.', color: 'from-orange-500 to-red-500' },
-  { id: 5, name: 'محمد سامي', role: 'مستشار سياحي', image: client5, rating: 4, text: 'أعجبني مستوى الاحترافية في التعامل مع العملاء، وسأوصي بهم لكل أصدقائي وعائلتي.', color: 'from-indigo-500 to-purple-500' },
-  { id: 6, name: 'محمد احمد', role: 'صانع محتوى', image: client6, rating: 5, text: 'خدمة ممتازة وسيارات فاخرة. كل شيء كان منظم وسهل، تجربة لا تُنسى!', color: 'from-rose-500 to-pink-500' },
+  { id: 1, name: 'أحمد المنصوري', role: 'رجل أعمال', image: client1, rating: 5, text: 'الخدمة ممتازة! السيارة كانت في حالة رائعة وعملية الحجز كانت سلسة جدًا. أنصح بها بشدة للمسافرين للأعمال.', color: 'from-red-600 to-red-500' },
+  { id: 2, name: 'سارة محمد', role: 'أخصائية سياحة', image: client2, rating: 4, text: 'جعلت رحلتي السياحية خالية من التوتر. السيارة كانت فاخرة والدعم كان ممتازًا. سأستخدمها بالتأكيد مرة أخرى!', color: 'from-red-700 to-red-500' },
+  { id: 3, name: 'عمر حسن', role: 'رائد أعمال', image: client3, rating: 5, text: 'مجموعة رائعة من السيارات وأسعار منافسة. الفريق بذل جهده لتلبية احتياجاتي. خمس نجوم!', color: 'from-red-500 to-red-400' },
+  { id: 4, name: 'محمد علي', role: 'مدير مشروع', image: client4, rating: 5, text: 'تجربة رائعة من البداية للنهاية. السيارة نظيفة ومريحة، والخدمة ممتازة للغاية.', color: 'from-red-600 to-red-400' },
+  { id: 5, name: 'محمد سامي', role: 'مستشار سياحي', image: client5, rating: 4, text: 'أعجبني مستوى الاحترافية في التعامل مع العملاء، وسأوصي بهم لكل أصدقائي وعائلتي.', color: 'from-red-700 to-red-500' },
+  { id: 6, name: 'محمد احمد', role: 'صانع محتوى', image: client6, rating: 5, text: 'خدمة ممتازة وسيارات فاخرة. كل شيء كان منظم وسهل، تجربة لا تُنسى!', color: 'from-red-500 to-red-400' },
 ];
 
-const colors = ['from-blue-500 to-cyan-500', 'from-purple-500 to-pink-500', 'from-green-500 to-emerald-500', 'from-orange-500 to-red-500', 'from-indigo-500 to-purple-500', 'from-rose-500 to-pink-500'];
+const colors = ['from-red-600 to-red-500', 'from-red-700 to-red-500', 'from-red-500 to-red-400', 'from-red-600 to-red-400', 'from-red-700 to-red-500', 'from-red-500 to-red-400'];
 
 export const Testimonials = () => {
   const { t } = useLanguage();
@@ -42,7 +42,7 @@ export const Testimonials = () => {
 
   const next = () => { setIsAutoPlaying(false); setCurrent(prev => (prev + 1) % testimonials.length); };
   const prev = () => { setIsAutoPlaying(false); setCurrent(prev => (prev - 1 + testimonials.length) % testimonials.length); };
-  const goToSlide = index => { setIsAutoPlaying(false); setCurrent(index); };
+  const goToSlide = (index: number) => { setIsAutoPlaying(false); setCurrent(index); };
 
   const submitReview = () => {
     const newTestimonial = {
@@ -58,14 +58,14 @@ export const Testimonials = () => {
     setTimeout(() => setShowSuccess(false), 3000);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast((t) => (
-      <div>
+    toast((tost) => (
+      <div className="text-right rtl:text-right">
         هل أنت متأكد أنك تريد إرسال هذا التعليق؟
         <div className="mt-2 flex gap-2 justify-end">
-          <button onClick={() => { toast.dismiss(t.id); submitReview(); }} className="px-3 py-1 rounded bg-green-500 text-white">نعم</button>
-          <button onClick={() => toast.dismiss(t.id)} className="px-3 py-1 rounded bg-gray-300">لا</button>
+          <button onClick={() => { toast.dismiss(tost.id); submitReview(); }} className="px-3 py-1 rounded bg-green-500 text-white">نعم</button>
+          <button onClick={() => toast.dismiss(tost.id)} className="px-3 py-1 rounded bg-gray-300">لا</button>
         </div>
       </div>
     ));
@@ -76,7 +76,7 @@ export const Testimonials = () => {
       <Toaster position="top-right" />
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-4 text-violet-600 dark:text-yellow-600">{t('testimonials.title')}</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-4 text-violet-600 dark:text-indigo-400">{t('testimonials.title')}</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">{t('testimonials.subtitle')}</p>
         </div>
 
@@ -98,7 +98,7 @@ export const Testimonials = () => {
                       <p className="font-bold text-base sm:text-lg">{testimonials[current].name}</p>
                       <p className="text-sm sm:text-base text-muted-foreground">{testimonials[current].role}</p>
                     </div>
-                    <div className="flex gap-1">{[...Array(testimonials[current].rating)].map((_, i) => <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-accent text-accent" />)}</div>
+                    <div className="flex gap-1">{[...Array(testimonials[current].rating)].map((_, i) => <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />)}</div>
                   </div>
                 </div>
               </div>
@@ -106,17 +106,19 @@ export const Testimonials = () => {
           </Card>
 
           {/* Navigation */}
-          <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 bg-primary text-primary-foreground p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
+          <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-          <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 bg-primary text-primary-foreground p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
+          <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Dots */}
-          <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">{testimonials.map((_, index) => (
-            <button key={index} onClick={() => goToSlide(index)} className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${index===current?'w-6 sm:w-8 bg-primary shadow-lg':'w-2 sm:w-3 bg-muted hover:bg-muted-foreground/50'}`}/>
-          ))}</div>
+          <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
+            {testimonials.map((_, index) => (
+              <button key={index} onClick={() => goToSlide(index)} className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${index===current?'w-6 sm:w-8 bg-red-600 shadow-lg':'w-2 sm:w-3 bg-muted hover:bg-muted-foreground/50'}`} />
+            ))}
+          </div>
         </div>
 
         {/* Form */}
@@ -124,40 +126,47 @@ export const Testimonials = () => {
           <Card className="shadow-xl sm:shadow-2xl border-2 border-border/50 backdrop-blur-sm bg-card/95 overflow-hidden">
             <CardContent className="p-4 sm:p-6 md:p-8 lg:p-10">
               <div className="text-center mb-6 sm:mb-8">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4 text-violet-600 dark:text-yellow-600">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4 text-violet-600 dark:text-indigo-400">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">{t('We would love to hear about your experience') || 'نود أن نسمع عن تجربتك معنا'}</p>
               </div>
 
-              <div onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2">{t('Name')}</label>
-                  <input type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300" placeholder={t('Your name') || 'اسمك'} />
+                  <input type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/20 transition-all duration-300" placeholder={t('Your name') || 'اسمك'} />
                 </div>
+
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2">{t('Role')}</label>
-                  <input type="text" value={formData.role} onChange={e => setFormData({ ...formData, role: e.target.value })} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300" placeholder={t('Your role') || 'وظيفتك'} />
+                  <input type="text" value={formData.role} onChange={e => setFormData({ ...formData, role: e.target.value })} required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/20 transition-all duration-300" placeholder={t('Your role') || 'وظيفتك'} />
                 </div>
+
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('Rating')}</label>
-                  <div className="flex gap-1.5 sm:gap-2 justify-center sm:justify-start">{[1,2,3,4,5].map(star => (
-                    <button key={star} type="button" onClick={()=>setFormData({...formData,rating:star})} className="transition-transform hover:scale-125">
-                      <Star className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-colors ${star<=formData.rating?'fill-accent text-accent':'text-muted-foreground'}`} />
-                    </button>
-                  ))}</div>
+                  <div className="flex gap-1.5 sm:gap-2 justify-center sm:justify-start">
+                    {[1,2,3,4,5].map(star => (
+                      <button key={star} type="button" onClick={()=>setFormData({...formData,rating:star})} className="transition-transform hover:scale-125">
+                       <Star className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-colors ${star<=formData.rating?'fill-yellow-400 text-yellow-400':'text-muted-foreground'}`} />
+                      </button>
+                    ))}
+                  </div>
                 </div>
+
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2">{t('Your Review') || 'رأيك'}</label>
-                  <textarea value={formData.text} onChange={e=>setFormData({...formData,text:e.target.value})} required rows={4} className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 transition-all duration-300 resize-none" placeholder={t('Tell us about your experience') || 'أخبرنا عن تجربتك'} />
+                  <textarea value={formData.text} onChange={e=>setFormData({...formData,text:e.target.value})} required rows={4} className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/20 transition-all duration-300 resize-none" placeholder={t('Tell us about your experience') || 'أخبرنا عن تجربتك'} />
                 </div>
-                <button type="button" onClick={handleSubmit} className="w-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg rounded-lg sm:rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 hover:scale-[1.02] active:scale-[0.98]">
+
+                <button type="submit" className="w-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg rounded-lg sm:rounded-xl bg-gradient-to-r from-red-600 to-red-500 text-white font-bold hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 hover:scale-[1.02] active:scale-[0.98]">
                   <Send className="w-4 h-4 sm:w-5 sm:h-5" /> {t('Submit Review')}
                 </button>
+
                 {showSuccess && (
-                  <div className="p-3 sm:p-4 text-sm sm:text-base rounded-lg sm:rounded-xl bg-green-500/20 border-2 border-green-500/50 text-green-400 text-center font-semibold animate-fade-in">
+                  <div className="p-3 sm:p-4 text-sm sm:text-base rounded-lg sm:rounded-xl bg-green-500/20 border-2 border-green-500/50 text-green-600 text-center font-semibold animate-fade-in">
                     {t('Thank you for your review!')}
                   </div>
                 )}
-              </div>
+              </form>
             </CardContent>
           </Card>
         </div>

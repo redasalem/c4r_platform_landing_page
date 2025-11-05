@@ -14,28 +14,25 @@ export const EmailButton = () => {
   href={`mailto:${email}?subject=${subject}&body=${body}`}
   className="group fixed bottom-6 left-6 z-50"
   aria-label="Contact us via Email"
->
-  {/* Outer Glow Ring */}
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-60 group-hover:opacity-100 animate-pulse transition-all duration-300" />
   
-  {/* Main Button */}
-  <div className={`relative p-4 sm:p-5 md:p-6 rounded-full shadow-2xl group-hover:scale-110 transition-all duration-300 ${
-    theme === 'dark'
-      ? 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 group-hover:shadow-[0_0_40px_rgba(147,51,234,0.8)]'
-      : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.8)]'
-  }`}>
-    
-    {/* Animated Ring */}
-    <div className="absolute inset-0 rounded-full border-2 border-white/30 group-hover:scale-125 group-hover:opacity-0 transition-all duration-500" />
-    
-    {/* Email Icon */}
-    <Mail className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white relative z-10 group-hover:-rotate-12 transition-transform duration-300" strokeWidth={2} />
+>{/* Outer Glow Ring */}
+<div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-[#E03030] opacity-40 group-hover:opacity-60 blur-xl animate-pulse transition-all duration-300" />
 
-    {/* Notification Badge */}
-    <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-bounce shadow-lg">
-      !
-    </div>
+{/* Main Button */}
+<div className={`relative p-4 sm:p-5 md:p-6 rounded-full shadow-2xl group-hover:scale-110 transition-all duration-300 ${
+  theme === 'dark'
+    ? 'bg-gradient-to-br from-blue-800 via-purple-600 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_40px_rgba(147,51,234,0.6)]'
+    : 'bg-gradient-to-br from-blue-500 via-purple-400 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]'
+}`}>
+  <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:scale-125 group-hover:opacity-0 transition-all duration-500" />
+  <Mail className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white relative z-10 group-hover:-rotate-12 transition-transform duration-300" strokeWidth={2} />
+  
+  {/* Notification Badge */}
+  <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-bounce shadow-lg">
+    !
   </div>
+</div>
+
 
   {/* Tooltip */}
   <div 

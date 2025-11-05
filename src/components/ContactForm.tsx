@@ -1,6 +1,6 @@
 import type React from "react"
 import { useState } from "react"
-import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { Send, MapPin, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -16,6 +16,7 @@ export default function ContactForm() {
   
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [result, setResult] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -25,8 +26,6 @@ export default function ContactForm() {
       setIsValidEmail(emailRegex.test(value));
     }
   }
-
-  const [result, setResult] = useState(false);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -155,16 +154,16 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={!formData.name || !isValidEmail || !formData.subject || !formData.message}
-                  className="cursor-pointer w-full px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-primary text-accent-foreground font-bold text-lg hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] group/btn"
+                  className="cursor-pointer w-full px-8 py-4 rounded-xl bg-red-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] group/btn"
                 >
                   {result ? (
                     <>
-                      <div className="w-5 h-5 border-3 border-accent-foreground border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin" />
                       {t('Sending...')}
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                      <Send className="w-5 h-5 text-white group-hover/btn:translate-x-1 transition-transform" />
                       {t('Send Message')}
                     </>
                   )}
@@ -193,7 +192,6 @@ export default function ContactForm() {
             {/* Map */}
             <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-border/50 group hover:shadow-3xl transition-all duration-500">
               <div className="relative h-[400px]">
-               
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463878.29488595825!2d46.82252880000001!3d24.725191849999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2z2KfZhNix2YrYp9i2INin2YTYs9i52YjYr9mK2Kk!5e0!3m2!1sar!2seg!4v1762216687776!5m2!1sar!2seg"
                   width="100%"
@@ -212,8 +210,8 @@ export default function ContactForm() {
               {/* Location Card */}
               <div className="p-6 rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-accent text-white group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="w-6 h-6" />
+                  <div className="p-3 rounded-lg bg-red-500 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg text-foreground mb-2">{t('Location')}</h3>
@@ -227,8 +225,8 @@ export default function ContactForm() {
               {/* Email Card */}
               <div className="p-6 rounded-xl bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-accent text-white group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-6 h-6" />
+                  <div className="p-3 rounded-lg bg-red-500 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg text-foreground mb-2">{t('Email')}</h3>

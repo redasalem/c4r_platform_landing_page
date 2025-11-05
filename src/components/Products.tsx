@@ -168,7 +168,7 @@ export default function Products() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent" />
                   <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-end">
-                    <span className="w-fit px-2 sm:px-3 py-1 bg-blue-600/90 rounded-full text-xs font-bold text-white mb-2 inline-block">
+                    <span className="w-fit px-2 sm:px-3 py-1 bg-red-600/90 rounded-full md:text-[13px] text-xs font-bold text-white mb-2 inline-block">
                       {product.category}
                     </span>
 

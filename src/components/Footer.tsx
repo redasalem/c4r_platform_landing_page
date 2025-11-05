@@ -13,7 +13,7 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 text-black dark:text-white py-16 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 text-black dark:text-white py-16 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
@@ -27,7 +27,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-12">
           {/* Logo & Name */}
           <div className="flex items-center gap-3 group cursor-pointer">
-             <img src="/apple-touch-icon.png" alt="logo" className="w-24 h-20 rounded-xl" />
+             <img src="/apple-touch-icon.png" alt="logo" className="w-44 h-16 rounded-xl" />
            
           </div>
 
@@ -48,7 +48,7 @@ export const Footer = () => {
   className="w-full max-w-full overflow-hidden"
   style={{ animationDelay: "0.2s" }}
 >
-  <h2 className="font-bold text-center text-3xl mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+  <h2 className="font-bold text-center md:text-4xl text-2xl mb-8 text-gray-800">
     {t("Our Partners")}
   </h2>
   <div className="relative">

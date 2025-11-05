@@ -76,8 +76,8 @@ export const Hero = () => {
               size="lg"
               className={`w-fit text-base sm:text-lg md:text-xl px-6 sm:px-8 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 theme === 'dark'
-                  ? 'bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-500 hover:via-pink-500 hover:to-purple-500 text-white shadow-lg shadow-purple-500/50'
-                  : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 text-white shadow-lg shadow-blue-500/50'
+                  ? 'bg-gradient-to-r from-[#E03030] via-pink-600 to-[#E03030] hover:from-[#E03030] hover:via-pink-500 hover:to-[#E03030] text-white shadow-lg shadow-[#E03030]'
+                  : 'bg-gradient-to-r from-[#E03030] via-pink-600 to-[#E03030] hover:from-[#E03030] hover:via-pink-500 hover:to-[#E03030] text-white shadow-lg shadow-[#E03030]'
               }`}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
