@@ -24,6 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': ' The  platform  is  your  ideal  intermediary  for  car  rentals,  offering  flexible and diverse services  to  meet  various  needs, We  are  committed  to  providing a professional rental experience  that  combines  ease, reliability, and  efficiency, to  meet all requirements at competitive prices',
     'hero.cta': 'Book Now',
     'hero.testimonials': 'Client Reviews',
+    'Customized solutions for companies and entities that need a highly efficient fleet of vehicles':'Customized solutions for companies and entities that need a highly efficient fleet of vehicles',
     
     // Products
     'products.title': 'Our Fleet',
@@ -156,6 +157,7 @@ const translations: Record<Language, Record<string, string>> = {
     'Daily or monthly car rentals':'تأجير السيارات يوميًا أو شهريًا',
     'Flexible plans to suit your lifestyle and various needs':'خطط مرنة لتناسب نمط حياتك واحتياجاتك المختلفة',
     'Experience the luxury car experience':'تجربة السيارات الفاخرة',
+    'Customized solutions for companies and entities that need a highly efficient fleet of vehicles':'حلول مخصصة للشركات والكيانات التي تحتاج إلى أسطول عالي الكفاءة من المركبات',
     
     // Hero
     'hero.title': 'مرحباً بكم في منصة C4R',
