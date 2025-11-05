@@ -10,10 +10,10 @@ import heroCar3 from '@/assets/hero-car-3.jpg';
 import MercedesBenz from '../assets/Mercedes-Benz.jpg';
 
 const slides = [
-  { image: heroCar1, title: 'Luxury Sports Cars' },
-  { image: heroCar2, title: 'Premium SUVs' },
-  { image: heroCar3, title: 'Elegant Sedans' },
-  { image: MercedesBenz, title: 'MercedesBenz' },
+  { image: heroCar3, title: 'Luxury Sports Cars' },
+  { image: heroCar1, title: 'Premium SUVs' },
+  { image:MercedesBenz, title: 'Elegant Sedans' },
+  { image:heroCar2, title: 'MercedesBenz' },
 ];
 
 export const Hero = () => {

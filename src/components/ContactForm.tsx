@@ -62,11 +62,11 @@ export default function ContactForm() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in relative z-20">
           <div className="inline-block mb-4">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider bg-primary/10 px-4 py-2 rounded-full">
+            <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#800020] dark:text-[#a82e3e] bg-[#800020]/10 dark:bg-[#800020]/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
               {t('Get in Touch')}
             </span>
           </div>
-          <h2 className="mt-2 text-4xl md:text-5xl lg:text-4xl font-semibold mb-4 text-violet-600 dark:text-yellow-600">
+          <h2 className="mt-2 text-4xl md:text-5xl lg:text-4xl font-semibold mb-4 text-red-700 dark:text-red-600">
             {t('Contact us for inquiries or reservations')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary rounded-full mx-auto" />

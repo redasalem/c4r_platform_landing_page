@@ -76,7 +76,7 @@ export const Testimonials = () => {
       <Toaster position="top-right" />
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-4 text-violet-600 dark:text-indigo-400">{t('testimonials.title')}</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-7 text-red-700 dark:text-red-600">{t('testimonials.title')}</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">{t('testimonials.subtitle')}</p>
         </div>
 
@@ -126,7 +126,7 @@ export const Testimonials = () => {
           <Card className="shadow-xl sm:shadow-2xl border-2 border-border/50 backdrop-blur-sm bg-card/95 overflow-hidden">
             <CardContent className="p-4 sm:p-6 md:p-8 lg:p-10">
               <div className="text-center mb-6 sm:mb-8">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4 text-violet-600 dark:text-indigo-400">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4 text-red-700 dark:text-red-600">{t('Share Your Experience') || 'شارك تجربتك'}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">{t('We would love to hear about your experience') || 'نود أن نسمع عن تجربتك معنا'}</p>
               </div>
 

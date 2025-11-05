@@ -48,7 +48,7 @@ export const Footer = () => {
   className="w-full max-w-full overflow-hidden"
   style={{ animationDelay: "0.2s" }}
 >
-  <h2 className="font-bold text-center md:text-4xl text-2xl mb-8 text-gray-800">
+  <h2 className="font-bold text-center md:text-4xl text-2xl mb-12 text-red-700 dark:text-red-600">
     {t("Our Partners")}
   </h2>
   <div className="relative">
@@ -62,7 +62,7 @@ export const Footer = () => {
             <img
               src={logo}
               alt={`Partner ${index + 1}`}
-              className="relative h-32 w-24 md:h-40 md:w-32 object-contain rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
+              className="relative h-32 w-24 md:h-40 md:w-36 object-contain mb-3 rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
             />
           </div>
         </div>
@@ -79,7 +79,7 @@ export const Footer = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <div className="flex flex-col gap-6 items-center p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/50 shadow-xl">
-              <h3 className="font-bold text-3xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h3 className="font-bold text-3xl text-red-700 dark:text-red-600">
                 {t("Quick Links")}
               </h3>
               <div className="flex items-center justify-center gap-8 flex-wrap">

@@ -122,7 +122,7 @@ export default function Products() {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 relative">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-3 sm:mb-4 text-violet-600 dark:text-yellow-600">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-3 sm:mb-6  text-red-700 dark:text-red-600">
             {t("Experience the luxury car experience")}
           </h2>
 

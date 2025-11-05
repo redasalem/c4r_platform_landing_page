@@ -16,9 +16,9 @@ const SERVICES: Service[] = [
     titleKey: "DAILY OR MONTHLY CAR RENTALS",
     subtitleKey: "Flexible plans to suit your lifestyle and various needs",
     features: [
-      { icon: Car, textKey: "Flexible rental plans" },
-      { icon: Clock, textKey: "Hourly car rental with driver" },
-      { icon: Home, textKey: "Your comfort is our priority… no branch visits needed" },
+      { icon: Car, textKey: "Rental options suitable for every occasion" },
+      { icon: Clock, textKey: "Hourly rental with the option to provide a driver" },
+      { icon: Home, textKey: "We bring the service to you wherever you are" },
     ],
   },
   {
@@ -26,8 +26,8 @@ const SERVICES: Service[] = [
     titleKey: "HOURLY CAR RENTALS WITH A DRIVER",
     subtitleKey: "Ideal for quick commutes, meetings and private trips",
     features: [
-      { icon: Clock, textKey: "Quick and punctual service" },
-      { icon: Users, textKey: "Perfect for meetings and events" },
+      { icon: Clock, textKey: "Fast and punctual service" },
+      { icon: Users, textKey: "Ideal for meetings and events" },
       { icon: Car, textKey: "Comfortable and well-maintained vehicles" },
     ],
   },
@@ -46,9 +46,9 @@ const SERVICES: Service[] = [
     titleKey: "CAR AVAILABILITY IN BULK",
     subtitleKey:"Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
     features: [
-      { icon: Car, textKey: "Luxury vehicles for all occasions" },
-      { icon: Users, textKey: "Comfortable seating for passengers" },
-      { icon: Clock, textKey: "Available whenever you need" },
+      { icon: Car, textKey: "Diverse and luxurious fleet" },
+      { icon: Users, textKey: "Comfort and elegance for every passenger" },
+      { icon: Clock, textKey: "Ready to serve you anytime" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const SERVICES: Service[] = [
     subtitleKey: "A comfortable start to your trip, with punctual service",
     features: [
       { icon: Home, textKey: "Car delivered to your location" },
-      { icon: Car, textKey: "No need to visit a branch" },
+      { icon: Car, textKey: "Receive and start your journey with ease" },
       { icon: Clock, textKey: "Flexible schedules for your convenience" },
     ],
   },
@@ -127,7 +127,7 @@ export default function Services() {
               {t("Our Services")}
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-slate-900 via-[#800020] to-slate-900 dark:from-slate-100 dark:via-[#a82e3e] dark:to-slate-100 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4 text-red-700 dark:text-red-600">
             {t("Services")}
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
