@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# منصة C4R لتأجير السيارات
 
-## Project info
+مرحبًا! هذا المشروع هو **موقع تعريفي لمنصة C4R Platform** لتأجير السيارات، يوضح خدمات المنصة ويوفر تجربة مستخدم سلسة وفخمة.
 
-**URL**: https://lovable.dev/projects/d688154e-0e17-497d-bed4-2713dda9a7af
+---
 
-## How can I edit this code?
+## 📌 نظرة عامة
 
-There are several ways of editing your application.
+منصة C4R توفر خدمات تأجير سيارات **مرنة وفاخرة** تناسب احتياجات العملاء المختلفة، سواء كانت تأجير يومي، شهري، أو خدمات الشركات.  
+الموقع يحتوي على **واجهة مستخدم حديثة، تجربة سلسة على جميع الأجهزة، ودعم للغات متعددة ووضع الليل/النهار**.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d688154e-0e17-497d-bed4-2713dda9a7af) and start prompting.
+## ⚡ المميزات الرئيسية
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React.js** لبناء واجهة المستخدم الحديثة.  
+- **Tailwind CSS** لتصميم مرن وسريع الاستجابة (Responsive).  
+- **Framer Motion** لإضافة أنيميشن سلس وجذاب.  
+- **shadcn/ui** لمكونات واجهة مستخدم جاهزة وأنيقة.  
+- **Web3Form** لتسهيل التعامل مع النماذج والتواصل مع العملاء.  
+- **زر تغيير الثيم (Dark / Light Mode)** لتجربة مستخدم مرنة.  
+- **زر تغيير اللغة** لتوفير دعم متعدد اللغات.  
+- **Material Icons** لاستخدام أيقونات جذابة وواضحة.  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🖥️ المظهر والاستجابة
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- تصميم **Full Clean Minimal** يشبه أسلوب Apple Vision Pro وmacOS.  
+- كروسل تفاعلي للعرض، متوافق مع **الموبايل، التابلت، والديسكتوب**.  
+- استخدام `clamp()` و`scroll-snap` لضمان سلاسة التصميم على كل الشاشات.  
+- نصوص، كروت، وأزرار قابلة للتكيف مع أي حجم شاشة.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📁 الهيكلية
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+c4r-platform/
+├─ public/
+├─ src/
+│ ├─ assets/ # صور وأيقونات
+│ ├─ components/ # كمبوننتس React
+│ ├─ contexts/ # Contexts (Language / Theme)
+│ ├─ pages/ # صفحات الموقع
+│ └─ App.tsx
+├─ package.json
+├─ tailwind.config.js
+└─ README.md
 
-# Step 3: Install the necessary dependencies.
-npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+##  كيفية التشغيل محليًا
+
+1. استنساخ المشروع:
+```bash
+git clone <رابط المشروع>
+cd c4r-platform
+
+
+تثبيت الحزم:
+
+npm install
+
+
+تشغيل المشروع:
+
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+زيارة المشروع على المتصفح:
 
-**Use GitHub Codespaces**
+https://c4rplatform.netlify.app/
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+ التقنيات المستخدمة
+التقنية	الاستخدام
+React.js	بناء واجهة المستخدم
+Tailwind CSS	التصميم المرن والسريع
+Framer Motion	تحريك المكونات والأنيميشن
+shadcn/ui	مكونات واجهة مستخدم جاهزة وأنيقة
+Web3Form	إدارة النماذج والتواصل مع العملاء
+Material Icons	أيقونات واضحة وجذابة
 
-## What technologies are used for this project?
+ ملاحظات
 
-This project is built with:
+الكروسل متوافق مع اللمس والسحب (touch swipe).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+زر تغيير اللغة يدعم العربية والإنجليزية.
 
-## How can I deploy this project?
+زر تغيير الثيم يدعم Dark / Light Mode.
 
-Simply open [Lovable](https://lovable.dev/projects/d688154e-0e17-497d-bed4-2713dda9a7af) and click on Share -> Publish.
+تم تحسين الريسپونسف بالكامل لكل الأجهزة والشاشات.
 
-## Can I connect a custom domain to my Lovable project?
+ التواصل
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+لمزيد من المعلومات أو الدعم، يرجى التواصل عبر النموذج الموجود في الموقع أو عبر البريد الإلكتروني الخاص بالمنصة.
