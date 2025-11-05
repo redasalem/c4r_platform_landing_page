@@ -137,17 +137,17 @@ export default function Products() {
           <button
             onClick={scrollLeft}
             aria-label="Previous"
-            className="absolute top-1/2 left-2 sm:left-0 -translate-y-1/2 z-30 p-2 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 left-0 sm:left-0 -translate-y-1/2 z-30 p-1 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
           >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-blue-700 dark:text-blue-300" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-red-700 font-bold" />
           </button>
 
           <button
             onClick={scrollRight}
             aria-label="Next"
-            className="absolute top-1/2 right-2 sm:right-0 -translate-y-1/2 z-30 p-2 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 right-0 sm:right-0 -translate-y-1/2 z-30 p-1 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
           >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-blue-700 dark:text-blue-300" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-red-700 font-bold" />
           </button>
 
           {/* Scrollable Container */}

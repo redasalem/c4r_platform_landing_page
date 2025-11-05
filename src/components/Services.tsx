@@ -139,18 +139,18 @@ export default function Services() {
           {/* Navigation Buttons */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 sm:left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 -translate-x-2 sm:-translate-x-4 md:-translate-x-6"
+            className="absolute left-0 sm:left-0 md:left-0 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 -translate-x-2 sm:-translate-x-4 md:-translate-x-6"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
+            <ChevronLeft className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
           </button>
           
           <button
             onClick={scrollRight}
-            className="absolute right-0 sm:right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 md:p-4 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 translate-x-2 sm:translate-x-4 md:translate-x-6"
+            className="absolute right-0 sm:right-0 md:right-0 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 translate-x-2 sm:translate-x-4 md:translate-x-6"
             aria-label="Next"
           >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
+            <ChevronRight className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
           </button>
 
           <div
