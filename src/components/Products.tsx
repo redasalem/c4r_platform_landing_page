@@ -99,6 +99,13 @@ const products = [
     image: Audi,
     description: "هندسة ألمانية متطورة، تتميز بنظام الدفع الرباعي (Quattro) والتصميم الرياضي.",
   },
+   {
+    id: 13,
+    name: "Audi",
+    category: "Premium Sedan/Quattro",
+    image: Audi,
+    description: "هندسة ألمانية متطورة، تتميز بنظام الدفع الرباعي (Quattro) والتصميم الرياضي.",
+  },
 ];
 
 export default function Products() {

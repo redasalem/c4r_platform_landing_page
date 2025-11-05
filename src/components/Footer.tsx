@@ -26,13 +26,13 @@ export const Footer = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center gap-12">
           {/* Logo & Name */}
-          <div className="flex items-center gap-3 group cursor-pointer">
+          {/* <div className="flex items-center gap-3 group cursor-pointer">
              <img src="/apple-touch-icon.png" alt="logo" className="w-44 h-16 rounded-xl" />
            
-          </div>
+          </div> */}
 
           {/* Description */}
-          <div
+          {/* <div
             className="flex flex-col items-center gap-4 text-center max-w-3xl animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
@@ -41,7 +41,7 @@ export const Footer = () => {
                 "Empower your car rental business and take self-drive travel experience to the next level with the Caren Car Rental Platform. Check out our offering for independent car rentals, RV and campervan rentals and online resellers and OTAs."
               )}
             </p>
-          </div>
+          </div> */}
 
          {/* Partners Carousel - Static Version */}
 <div

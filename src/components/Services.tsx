@@ -17,7 +17,7 @@ const SERVICES: Service[] = [
     subtitleKey: "Flexible plans to suit your lifestyle and various needs",
     features: [
       { icon: Car, textKey: "Rental options suitable for every occasion" },
-      { icon: Clock, textKey: "Hourly rental with the option to provide a driver" },
+      { icon: Clock, textKey: "The freedom to choose the duration that suits your needs" },
       { icon: Home, textKey: "We bring the service to you wherever you are" },
     ],
   },
@@ -32,22 +32,12 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "no-branch-needed", image:serv3,
-    titleKey: "CAR DELIVERY AND PICKUP",
-    subtitleKey: "Book, unlock and drive — no branch visits required",
-    features: [
-      { icon: Home, textKey: "Full-service from your location" },
-      { icon: Car, textKey: "Seamless pickup & drop-off" },
-      { icon: Clock, textKey: "Save time with quick procedures" },
-    ],
-  },
-  {
     id: "premium-fleet", image:serv4,
     titleKey: "CAR AVAILABILITY IN BULK",
     subtitleKey:"Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
     features: [
       { icon: Car, textKey: "Diverse and luxurious fleet" },
-      { icon: Users, textKey: "Comfort and elegance for every passenger" },
+      { icon: Users, textKey: "Vehicles equipped with the latest features" },
       { icon: Clock, textKey: "Ready to serve you anytime" },
     ],
   },
