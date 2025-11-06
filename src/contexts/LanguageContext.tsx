@@ -18,6 +18,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact': 'Contact',
     'Testimonials':'Testimonials',
     'Our Collection':'Our Collection',
+    'Go To Home':'Go To Home',
     
     // Hero
     'hero.title': 'Welcome to C4R Platform',
@@ -204,6 +205,7 @@ const translations: Record<Language, Record<string, string>> = {
     'Scroll or drag to explore':'مرّر أو اسحب للاستكشاف',
     'Support':'دعم',
     'Satisfaction':'الرضا عنا',
+    'Go To Home':'الذهاب إلى الصفحة الرئيسية',
     'Your name':'اكتب اسمك هنا',
     'your@email.com':'اكتب بريدك الالكتروني هنا',
     "Your message here...":"اكتب رسالتك هنا",

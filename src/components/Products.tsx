@@ -13,6 +13,7 @@ import MercedesBenz from "../assets/Mercedes-Benz.jpg";
 import Honda from "../assets/Honda.jpg";
 import Nissan from "../assets/Nissan.jpg";
 import Audi from "../assets/Audi.jpg";
+import herocar1 from "../assets/hero-car-1.jpg";
 
 const products = [
   {
@@ -100,12 +101,13 @@ const products = [
     description: "هندسة ألمانية متطورة، تتميز بنظام الدفع الرباعي (Quattro) والتصميم الرياضي.",
   },
    {
-    id: 13,
-    name: "Audi",
-    category: "Premium Sedan/Quattro",
-    image: Audi,
-    description: "هندسة ألمانية متطورة، تتميز بنظام الدفع الرباعي (Quattro) والتصميم الرياضي.",
-  },
+  id: 13,
+  name: "McLaren 720S",
+  category: "Supercar / Performance",
+  image: herocar1,
+  description: "سيارة رياضية بريطانية فائقة السرعة، تتميز بتصميم ديناميكي هوائي مذهل، ومحرك V8 مزدوج التيربو يولّد قوة هائلة مع تسارع من 0 إلى 100 كم/س في أقل من 3 ثوانٍ. تعكس مزيجًا مثاليًا بين الفخامة والأداء العالي.",
+}
+
 ];
 
 export default function Products() {

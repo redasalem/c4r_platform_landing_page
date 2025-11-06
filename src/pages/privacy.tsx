@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Shield, FileText, Mail, MessageSquare, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Link } from 'react-router-dom';
 
 export const PrivacyPolicy = () => {
   const { t } = useLanguage();
@@ -205,6 +207,16 @@ export const PrivacyPolicy = () => {
             {t('contactUs')}
           </a>
         </div>
+      </div>
+      {/* back to Home */}
+
+      <div className='flex items-center justify-center'>
+        <Link to='/' className='flex items-center justify-center 
+        mt-10 bg-blue-900 text-white w-fit p-3 rounded-xl font-semibold
+         hover:bg-blue-600 duration-300 transition-all gap-1 hover:scale-105'>
+        <span>{t('Go To Home')}</span>
+        <ArrowRightAltIcon/>
+        </Link>
       </div>
     </section>
   );
