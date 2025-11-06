@@ -21,8 +21,8 @@ export const EmailButton = () => {
 {/* Main Button */}
 <div className={`relative p-4 sm:p-5 md:p-6 rounded-full shadow-2xl group-hover:scale-110 transition-all duration-300 ${
   theme === 'dark'
-    ? 'bg-gradient-to-br from-blue-800 via-purple-600 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_40px_rgba(147,51,234,0.6)]'
-    : 'bg-gradient-to-br from-blue-500 via-purple-400 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]'
+    ? 'bg-gradient-to-br from-red-400 via-red-600 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_40px_rgba(147,51,234,0.6)]'
+    : 'bg-gradient-to-br from-red-400 via-red-600 to-[#E03030] bg-opacity-90 group-hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]'
 }`}>
   <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:scale-125 group-hover:opacity-0 transition-all duration-500" />
   <Mail className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white relative z-10 group-hover:-rotate-12 transition-transform duration-300" strokeWidth={2} />

@@ -110,26 +110,26 @@ export default function Services() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#800020]/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container  px-6 sm:px-10 mx-auto  relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="inline-block mb-3 sm:mb-4">
             <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#800020] dark:text-[#a82e3e] bg-[#800020]/10 dark:bg-[#800020]/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
               {t("Our Services")}
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4 text-red-700 dark:text-red-600">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4 text-red-700 dark:text-red-600">
             {t("Services")}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-[16px] sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
             {t("Your comfort is our priority")}
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative md:w-full sm:w-[95%] xs:w-[90%] flex items-center justify-center">
           {/* Navigation Buttons */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 sm:left-0 md:left-0 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 -translate-x-2 sm:-translate-x-4 md:-translate-x-6"
+            className="absolute -left-3 sm:-left-4 md:-left-4 lg:-left-7 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 -translate-x-2 sm:-translate-x-4 md:-translate-x-6"
             aria-label="Previous"
           >
             <ChevronLeft className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
@@ -137,7 +137,7 @@ export default function Services() {
           
           <button
             onClick={scrollRight}
-            className="absolute right-0 sm:right-0 md:right-0 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 translate-x-2 sm:translate-x-4 md:translate-x-6"
+            className="absolute -right-3 sm:-right-4 md:-right-5 lg:-right-7 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 translate-x-2 sm:translate-x-4 md:translate-x-6"
             aria-label="Next"
           >
             <ChevronRight className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
@@ -201,7 +201,7 @@ export default function Services() {
 
                     <a
                       href="#contact"
-                      className="block w-full text-center px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base bg-[#800020] hover:bg-[#660019] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                      className="block w-fit sm:w-full text-center mx-auto px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base bg-[#800020] hover:bg-[#660019] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                       onClick={(e) => { if (dragState.current.isDragging) e.preventDefault(); }}
                     >
                       {t("book Now")}

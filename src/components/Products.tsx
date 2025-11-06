@@ -144,17 +144,17 @@ export default function Products() {
           <button
             onClick={scrollLeft}
             aria-label="Previous"
-            className="absolute top-1/2 left-0 sm:left-0 -translate-y-1/2 z-30 p-1 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 left-0 md:-left-3 lg:-left-8 sm:-left-16 -translate-y-1/2 z-30 p-1 md:p-3 bg-red-600 dark:bg-red-600 rounded-full shadow-lg hover:bg-red-700/80 transition-all duration-300 hover:scale-110"
           >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-red-700 font-bold" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white font-extrabold" />
           </button>
 
           <button
             onClick={scrollRight}
             aria-label="Next"
-            className="absolute top-1/2 right-0 sm:right-0 -translate-y-1/2 z-30 p-1 md:p-3 bg-white/70 dark:bg-gray-800/70 rounded-full shadow-lg hover:bg-white/90 dark:hover:bg-gray-700/90 transition-all duration-300 hover:scale-110"
+            className="absolute top-1/2 right-0 md:-right-6 lg:-right-8 sm:-right-24 -translate-y-1/2 z-30 p-1 md:p-3 bg-red-600 dark:bg-red-600 rounded-full shadow-lg hover:bg-red-700/80 transition-all duration-300 hover:scale-110"
           >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-red-700 font-bold" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white font-extrabold" />
           </button>
 
           {/* Scrollable Container */}
@@ -165,7 +165,7 @@ export default function Products() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="flex-shrink-0 w-[85%] xs:w-[75%] sm:w-[45%] md:w-[32%] lg:w-[30%] xl:w-[23%] snap-center"
+                className="flex-shrink-0 w-[95%] xs:w-[95%] sm:w-[50%] md:w-[30%] lg:w-[31%] xl:w-[31%] snap-center"
               >
                 <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group h-full">
                   <img
@@ -175,14 +175,14 @@ export default function Products() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent" />
                   <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-end">
-                    <span className="w-fit px-2 sm:px-3 py-1 bg-red-600/90 rounded-full md:text-[13px] text-xs font-bold text-white mb-2 inline-block">
+                    <span className="w-fit mx-5  px-2 sm:px-3 py-1 bg-red-600/90 rounded-full md:text-[13px] text-xs font-bold text-white mb-2 inline-block">
                       {product.category}
                     </span>
 
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white drop-shadow-lg mb-1 sm:mb-2">
+                    <h3 className="text-base mx-5 sm:text-lg md:text-xl font-bold text-white drop-shadow-lg mb-1 sm:mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/90 line-clamp-2 mb-3">
+                    <p className="text-xs mx-5 sm:text-sm text-white/90 line-clamp-2 mb-3">
                       {t(product.description)}
                     </p>
                     <a
