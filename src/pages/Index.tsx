@@ -2,12 +2,13 @@ import { Hero } from '@/components/Hero';
 import { Testimonials } from '@/components/Testimonials';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-// import { Navbar } from '@/components/Navbar';
+import { Navbar } from '@/components/Navbar';
 import Services  from '@/components/Services';
 import { EmailButton } from '@/components/EmailButton';
 import { Footer } from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import Products from '@/components/Products';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 
 
@@ -15,9 +16,10 @@ import Products from '@/components/Products';
 
 const Index = () => {
   return (
+     <ThemeProvider>
       <LanguageProvider>
         <div className="min-h-screen">
-          {/* <Navbar /> */}
+           <Navbar /> 
           <Hero />
           <Services />
           <Products />
@@ -28,6 +30,7 @@ const Index = () => {
           <EmailButton />
         </div>
       </LanguageProvider>
+      </ThemeProvider>
   );
 };
 
