@@ -107,10 +107,10 @@ export const Testimonials = () => {
 
           {/* Navigation */}
           <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-3 h-3 sm:w-6 sm:h-6" />
           </button>
           <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-3 h-3 sm:w-6 sm:h-6" />
           </button>
 
           {/* Dots */}

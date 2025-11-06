@@ -5,6 +5,7 @@ import partner3 from "@/assets/p-3.jpeg";
 import partner4 from "@/assets/p-4.jpeg";
 import { Car, Instagram, Twitter } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 const partners = [partner1, partner2, partner3, partner4];
 
@@ -163,45 +164,43 @@ export const Footer = () => {
             className="flex items-center justify-center gap-6 mt-4 animate-fade-in"
             style={{ animationDelay: "0.55s" }}
           >
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
+            <Link
+              to="/privacy"
               rel="noopener noreferrer"
               className="text-lg font-semibold text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-all duration-300"
             >
               {t("Terms & Conditions") || "الشروط والأحكام"}
-            </a>
+            </Link>
             <span className="text-gray-400 dark:text-gray-500">|</span>
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
+            <Link
+              to="/privacy"
               rel="noopener noreferrer"
               className="text-lg font-bold text-red-500 hover:text-red-600 transition-all duration-300"
             >
               {t("Privacy Policy") || "سياسة الخصوصية"}
-            </a>
+            </Link>
           </div>
 
           {/* reCAPTCHA Notice */}
           <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 text-center mt-2 animate-fade-in">
             This site is protected by reCAPTCHA and the{" "}
-            <a
-              href="https://policies.google.com/privacy"
+            <Link
+              to="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary dark:hover:text-accent transition-colors duration-300"
             >
               Google Privacy Policy
-            </a>{" "}
+            </Link>{" "}
             and{" "}
-            <a
-              href="https://policies.google.com/terms"
+            <Link
+              to="https://policies.google.com/terms"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary dark:hover:text-accent transition-colors duration-300"
             >
               Terms of Service
-            </a>{" "}
+            </Link>{" "}
             apply.
           </p>
 

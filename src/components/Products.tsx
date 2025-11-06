@@ -146,7 +146,7 @@ export default function Products() {
             aria-label="Previous"
             className="absolute top-1/2 left-0 md:-left-3 lg:-left-8 sm:-left-16 -translate-y-1/2 z-30 p-1 md:p-3 bg-red-600 dark:bg-red-600 rounded-full shadow-lg hover:bg-red-700/80 transition-all duration-300 hover:scale-110"
           >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white font-extrabold" />
+            <ChevronLeft className="w-3 h-3 md:w-6 md:h-6 text-white font-extrabold" />
           </button>
 
           <button
@@ -154,7 +154,7 @@ export default function Products() {
             aria-label="Next"
             className="absolute top-1/2 right-0 md:-right-6 lg:-right-8 sm:-right-24 -translate-y-1/2 z-30 p-1 md:p-3 bg-red-600 dark:bg-red-600 rounded-full shadow-lg hover:bg-red-700/80 transition-all duration-300 hover:scale-110"
           >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white font-extrabold" />
+            <ChevronRight className="w-3 h-3 md:w-6 md:h-6 text-white font-extrabold" />
           </button>
 
           {/* Scrollable Container */}
