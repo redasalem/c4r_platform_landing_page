@@ -1,13 +1,13 @@
-import React from 'react'
 import CarType from './CarType';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Luxury from '../../assets/luxury/Lexus LS.png';
+import Luxury from '../../assets/luxury/Luxury1.png';
 import Sedan from '../../assets/Sedan/Sedan.png';
 import Economy from '../../assets/Econmey/Economy.png';
-import Family from '../../assets/Family/Family.png';
+import Transport from '../../assets/Transport_cars/Transport Cars .jpg';
 import backUp from '../../assets/Backup/backUp.png';
 import JeepsCars from '../../assets/GebCar/GebCar.png';
 import { ArrowBigLeft } from 'lucide-react';
+
 
 
 
@@ -25,26 +25,31 @@ export const Products = () => {
       id: 2,
       title: 'Sedan cars',
       image:Sedan,
+      link:'/Sedan',
     },
     {
       id: 3,
       title: 'Economy cars',
       image:Economy,
+      link:'/Econmey',
     },
     {
       id: 4,
-      title: 'Family cars',
-      image:Family,
+      title:'Transport cars',
+      image:Transport,
+      link:'/TransportCars',
     },
     {
       id: 5,
       title: 'Backup cars',
       image:backUp,
+      link:'/Backup',
     },
     {
       id: 6,
       title:'Jeeps Cars',
       image:JeepsCars,
+      link:'/Jeeps',
     },
   ];
 
@@ -76,6 +81,7 @@ export const Products = () => {
               textButton={t('vist galery')}
               link={car.link}
               icon={<ArrowBigLeft className="w-4 h-4 sm:w-5 sm:h-5" />}
+              target="_self"
               
             />
           ))}

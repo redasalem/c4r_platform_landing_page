@@ -12,6 +12,11 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LuxuryPage } from "./pages/Luxury";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { EmailButton } from "./components/EmailButton";
+import { SedanPage } from "./pages/Sedan";
+import { EconmeyPage } from "./pages/Econmey";
+import { JeepsPage } from "./pages/Jeeps";
+import { TransportCarsPage } from "./pages/TransportCars";
+import { BackupPage } from "./pages/Backup";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +36,11 @@ const App = () => (
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/Luxury" element={<LuxuryPage />} />
+            <Route path="/Sedan" element={<SedanPage />} />
+             <Route path="/Econmey" element={<EconmeyPage />} />
+               <Route path="/TransportCars" element={<TransportCarsPage />} />
+                 <Route path="/Backup" element={<BackupPage />} />
+                   <Route path="/Jeeps" element={<JeepsPage />} />
 
           </Routes>
         </BrowserRouter>

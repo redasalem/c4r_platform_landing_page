@@ -6,6 +6,7 @@ interface Props {
   title: string;
   textButton:string;
   link: string;
+  target: string;
   onClick?: () => void;
   onBookNow?: () => void;
   icon: React.ReactNode;
@@ -15,6 +16,7 @@ const CarType:React.FC<Props> = ({
   image, 
   title, 
    textButton,
+   target,
   link = "#", 
   icon
 }) =>{
@@ -41,10 +43,12 @@ const CarType:React.FC<Props> = ({
         <div className="flex flex-col xs:flex-row gap-3">
           <a
             href={link}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-gradient-to-r from-[#800020] to-[#a82e3e] hover:from-[#660019] hover:to-[#8a2635] text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+            target={target}
+            className="flex-1 inline-flex items-center justify-center gap-4 px-4 sm:px-6 py-3 bg-gradient-to-r from-[#800020] to-[#a82e3e] hover:from-[#660019] hover:to-[#8a2635] text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
-            {icon}
-            <span className="text-sm sm:text-base">{textButton}</span>
+           
+            <span className="text-base sm:text-[18px] ">{textButton}</span>
+             {icon}
            
           </a>
 
