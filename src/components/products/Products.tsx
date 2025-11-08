@@ -4,7 +4,7 @@ import Luxury from '../../assets/luxury/Luxury1.png';
 import Sedan from '../../assets/Sedan/Sedan.png';
 import Economy from '../../assets/Econmey/Economy.png';
 import Transport from '../../assets/Transport_cars/Transport Cars .jpg';
-import backUp from '../../assets/Backup/backUp.png';
+import backUp from '../../assets/Back/backUp.png';
 import JeepsCars from '../../assets/GebCar/GebCar.png';
 import { ArrowBigLeft } from 'lucide-react';
 
