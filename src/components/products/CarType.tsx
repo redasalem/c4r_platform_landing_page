@@ -5,7 +5,7 @@ interface Props {
   image: string;
   title: string;
   textButton:string;
-  link?: string;
+  link: string;
   onClick?: () => void;
   onBookNow?: () => void;
   icon: React.ReactNode;
@@ -25,7 +25,7 @@ const CarType:React.FC<Props> = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full  transition-transform duration-700 group-hover:scale-110"
         />
         
         {/* Shine Effect */}

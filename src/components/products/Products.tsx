@@ -1,7 +1,7 @@
 import React from 'react'
 import CarType from './CarType';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Luxury from '../../assets/luxury/luxury-1.png';
+import Luxury from '../../assets/luxury/Lexus LS.png';
 import Sedan from '../../assets/Sedan/Sedan.png';
 import Economy from '../../assets/Econmey/Economy.png';
 import Family from '../../assets/Family/Family.png';

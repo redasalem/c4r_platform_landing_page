@@ -10,6 +10,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext"; // لازم تض�
 import { Navbar } from "./components/Navbar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LuxuryPage } from "./pages/Luxury";
+import { WhatsAppButton } from "./components/WhatsAppButton";
+import { EmailButton } from "./components/EmailButton";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
         <Navbar/>
+         <WhatsAppButton />
+          <EmailButton />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
