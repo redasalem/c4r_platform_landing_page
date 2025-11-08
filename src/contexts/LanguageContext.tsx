@@ -249,7 +249,7 @@ const translations: Record<Language, Record<string, string>> = {
   عربى: {
     // Navbar
     'about': 'من نحن',
-    'Transport cars':'سيارات النقل',
+    'Transport cars':'مركبات النقل',
     'Luxury cars':'سيارات فاخرة',
     'Econmey cars':'سيارات اقتصادية',
     'vist galery':'زيارة المعرض',
@@ -268,7 +268,7 @@ const translations: Record<Language, Record<string, string>> = {
     'Lexus ES 250':'لكزس إي إس 250',
     'A range of Econmey cars available from our':'مجموعة من السيارات الاقتصادية المتوفرة لدينا',
     'A range of Jeeps cars available from our':'مجموعة من سيارات الجيب المتوفرة لدينا',
-    'A range of Transport Cars available from our':'مجموعة من سيارات السيدان المتوفرة لدينا',
+    'A range of Transport Cars available from our':'مجموعة من مركبات النقل المتوفرة لدينا',
     'Backup cars':'سيارات باك اب',
     'Family cars':'سيارات عائلية',
     'Mercedes C200':'مرسيدس C200',

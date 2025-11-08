@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import heroCar1 from "@/assets/hero-car-1.jpg";
-import heroCar2 from "@/assets/hero-car-2.jpg";
+import heroCar2 from "@/assets/luxury/Land Rover.png";
 import heroCar3 from "@/assets/hero-car-3.jpg";
 import MercedesBenz from "../assets/Mercedes-Benz.jpg";
 
@@ -28,7 +28,7 @@ export const Hero = () => {
   return (
     <section
       id="About"
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="relative md:h-screen h-[500px]  w-full bg-black"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -45,8 +45,7 @@ export const Hero = () => {
   alt={slides[currentSlide].title}
   className="
     w-full h-full
-    object-[center_100%]   
-    xs:object-center   
+       
   "
   loading="lazy"
   decoding="async"
@@ -65,14 +64,14 @@ export const Hero = () => {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-3 xs:px-4 sm:px-16 h-full flex items-end sm:items-center pb-44 sm:pb-0">
+      <div className="relative z-20 container mx-auto px-3 xs:px-4 sm:px-16 h-full flex items-end sm:items-center pb-32 sm:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="w-full max-w-full sm:max-w-xl md:max-w-2xl"
         >
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-3 xs:mb-4 sm:mb-6 drop-shadow-2xl text-white text-center sm:text-left leading-tight">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-3 xs:mb-4 sm:mb-6 drop-shadow-2xl  text-white text-center sm:text-left leading-tight">
             {t("hero.title")}
           </h1>
 
