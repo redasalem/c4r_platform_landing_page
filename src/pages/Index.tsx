@@ -7,10 +7,8 @@ import Services  from '@/components/Services';
 import { EmailButton } from '@/components/EmailButton';
 import { Footer } from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import Products from '@/components/Products';
 import { ThemeProvider } from '@/contexts/ThemeContext';
-
-
+import  {Products}  from '@/components/products/Products';
 
 
 

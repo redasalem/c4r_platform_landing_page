@@ -9,6 +9,7 @@ import { PrivacyPolicy } from "./pages/privacy";
 import { LanguageProvider } from "@/contexts/LanguageContext"; // لازم تضيف ده
 import { Navbar } from "./components/Navbar";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { LuxuryPage } from "./pages/Luxury";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/Luxury" element={<LuxuryPage />} />
+
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
