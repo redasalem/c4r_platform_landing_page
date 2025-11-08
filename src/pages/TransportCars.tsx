@@ -4,6 +4,11 @@ import { Form } from "@/components/Form";
 import { Link } from "react-router-dom";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import Staria   from '@/assets/Transport_cars/Staria.png';
+import Seater_Bus_15   from '@/assets/Transport_cars/15-Seater Bus.png';
+import Seater_Bus_30  from '@/assets/Transport_cars/30-Seater Bus.png';
+import Seater_Bus_49  from '@/assets/Transport_cars/49-Seater Bus.jpg';
+
 
 
 
@@ -12,10 +17,10 @@ export const TransportCarsPage = () => {
   const message = encodeURIComponent('مرحباً! أود الاستفسار عن تأجير السيارات.');
   const { t } = useLanguage();
   const carTypes = [
-    { id: 1, title: "Staria", image: '' },
-  { id: 2, title: "15-Seater Bus", image: '' },
-  { id: 3, title: "30-Seater Bus", image: '' },
-  { id: 4, title: "49-Seater Bus", image: '' },
+    { id: 1, title: "staria", image:Staria},
+  { id: 2, title: "15-Seater Bus", image:Seater_Bus_15},
+  { id: 3, title: "30-Seater Bus", image: Seater_Bus_30 },
+  { id: 4, title: "49-Seater Bus", image:Seater_Bus_49},
 ];
 
   return (
