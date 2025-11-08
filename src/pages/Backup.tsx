@@ -4,10 +4,10 @@ import { Form } from "@/components/Form";
 import { Link } from "react-router-dom";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import JeepRouter from "@/assets/Back/Jeep Router.jpg";
-import Peugeot from '@/assets/Back/Peugeot pick-up.png';
-import Suzuki  from '@/assets/Back/Suzuki Pick-up.png';
-import Toyota_Hilux  from '@/assets/Back/Toyota Hilux Pick-up.png';
+import JeepRouter from "@/assets/Back/Jeep-Router.jpg";
+import Peugeot from '@/assets/Back/Peugeot-pick-up.png';
+import Suzuki  from '@/assets/Back/Suzuki-Pick-up.png';
+import Toyota_Hilux  from '@/assets/Back/Toyota-Hilux-Pick-up.png';
 
 
 
