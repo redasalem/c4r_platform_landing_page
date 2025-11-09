@@ -1,10 +1,10 @@
 import CarType from './CarType';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Luxury from '../../assets/luxury/BMW 7 Series.webp';
-import Sedan from '../../assets/Sedan/toruse.webp';
+import Sedan from '../../assets/Sedan/sedan1.jpeg';
 import Economy from '../../assets/Econmey/Economy.png';
 import Transport from '../../assets/Transport_cars/Transport Cars.png';
-import backUp from '../../assets/Back/Jeep-Router.jpg';
+import backUp from '../../assets/Back/backUp1.jpeg';
 import JeepsCars from '../../assets/GebCar/tahoe.jpg';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 

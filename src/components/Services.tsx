@@ -6,6 +6,7 @@ import serv4 from '../assets/serv4.webp';
 import serv1 from '../assets/serv1.webp';
 import serv2 from '../assets/serv2.webp';
 import serv3 from '../assets/serv3.webp';
+import serv6 from '../assets/Transport_cars/Transport Cars .jpg';
 
 type Feature = { icon: React.ElementType; textKey: string; };
 type Service = { id: string; image: string; titleKey: string; subtitleKey: string; features: Feature[]; };
@@ -51,6 +52,17 @@ const SERVICES: Service[] = [
       { icon: Clock, textKey: "Flexible schedules for your convenience" },
     ],
   },
+ {
+  id: "transport-service",
+  image: serv6,
+  titleKey: "TRANSPORT SERVICE",
+  subtitleKey: "Enjoy a smooth and reliable group transport experience",
+  features: [
+    { icon: Home, textKey: "Pick-up from your chosen location" },
+    { icon: Car, textKey: "Spacious and comfortable vehicles for every group size" },
+    { icon: Clock, textKey: "On-time service with flexible scheduling" },
+  ],
+},
 ];
 
 export default function Services() {
