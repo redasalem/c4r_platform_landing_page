@@ -64,12 +64,12 @@ export const Hero = () => {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-3 xs:px-4 sm:px-16 h-full flex items-end sm:items-center pb-32 sm:pb-0">
+      <div className="relative z-20 container mx-auto px-3 xs:px-4  h-full flex items-end sm:items-center pb-32 sm:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="w-full max-w-full sm:max-w-xl md:max-w-2xl"
+          className="w-full max-w-full sm:max-w-xl md:max-w-3xl flex flex-col gap-5  sm:gap-10 justify-center items-center"
         >
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-3 xs:mb-4 sm:mb-6 drop-shadow-2xl  text-white text-center sm:text-left leading-tight">
             {t("hero.title")}
@@ -79,10 +79,10 @@ export const Hero = () => {
             {t("hero.subtitle")}
           </p>
 
-          <div className="flex flex-row flex-wrap gap-6 xs:gap-5 sm:gap-5 items-start justify-center sm:justify-start">
+          <div className="flex flex-row flex-wrap gap-6 xs:gap-5 sm:gap-5 items-center justify-center">
             <Button
               size="lg"
-              className={`w-fit text-sm xs:text-base sm:text-lg md:text-xl px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-lg xs:rounded-xl sm:rounded-2xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`w-fit text-[12px] xs:text-base sm:text-lg md:text-xl px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-lg xs:rounded-xl sm:rounded-2xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 theme === "dark"
                   ? "bg-gradient-to-r from-[#800020] via-[#a82e3e] to-[#800020] hover:from-[#660019] hover:via-[#8a2635] hover:to-[#660019] text-white shadow-lg shadow-[#800020]/50"
                   : "bg-gradient-to-r from-[#800020] via-[#a82e3e] to-[#800020] hover:from-[#660019] hover:via-[#8a2635] hover:to-[#660019] text-white shadow-lg shadow-[#800020]/50"
@@ -99,7 +99,7 @@ export const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className={`w-fit text-sm xs:text-base sm:text-lg md:text-xl px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-lg xs:rounded-xl sm:rounded-2xl font-bold backdrop-blur-md border-2 transition-all duration-300 hover:scale-105 ${
+              className={`w-fit text-[12px] xs:text-base sm:text-lg md:text-xl px-2 xs:px-6 sm:px-8 py-0 xs:py-3 sm:py-4 md:py-5 rounded-lg xs:rounded-xl sm:rounded-2xl font-bold backdrop-blur-md border-2 transition-all duration-300 hover:scale-105 ${
                 theme === "dark"
                   ? "bg-white/10 text-white border-white/30 hover:bg-white/20 hover:border-white/50 shadow-lg"
                   : "bg-white/20 text-white border-white/40 hover:bg-white/30 hover:border-white/60 shadow-lg"
@@ -146,7 +146,7 @@ export const Hero = () => {
         <button
           onClick={prevSlide}
           aria-label="Previous"
-          className={`p-2.5 xs:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 active:scale-95 ${
+          className={`p-1 xs:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 active:scale-95 ${
             theme === "dark"
               ? "bg-white/10 hover:bg-white/20 text-white border-white/20 shadow-lg"
               : "bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg"
@@ -158,7 +158,7 @@ export const Hero = () => {
         <button
           onClick={nextSlide}
           aria-label="Next"
-          className={`p-2.5 xs:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 active:scale-95 ${
+          className={`p-1 xs:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 active:scale-95 ${
             theme === "dark"
               ? "bg-white/10 hover:bg-white/20 text-white border-white/20 shadow-lg"
               : "bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg"
