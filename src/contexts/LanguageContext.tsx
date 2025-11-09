@@ -24,7 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'Welcome to C4R Platform',
-    'hero.subtitle': ' The  platform  is  your  ideal  intermediary  for  car  rentals,  offering  flexible and diverse services  to  meet  various  needs, We  are  committed  to  providing a professional rental experience  that  combines  ease, reliability, and  efficiency, to  meet all requirements at competitive prices',
+    'hero.subtitle': "C4R Platform is your ideal car rental partner, offering flexible and reliable services for a seamless and professional experience at competitive prices.",
     'hero.cta': 'Book Now',
     'hero.testimonials': 'Client Reviews',
     'Customized solutions for companies and entities that need a highly efficient fleet of vehicles':'Customized solutions for companies and entities that need a highly efficient fleet of vehicles',
@@ -350,7 +350,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'مرحباً بكم في منصة C4R',
-    'hero.subtitle': 'تعد المنصة وسيطك المثالي لتأجير السيارات بخدمات مرنة ومتنوعة تلبي مختلف الاحتياجات. ونحرص على تقديم تجربة تأجير احترافية تجمع بين السهولة، والموثوقية، والكفاءة، لتلبية جميع المتطلبات وبأسعار تنافسية',
+    'hero.subtitle':' منصة C4R هي شريكك المثالي لتأجير السيارات، حيث نقدم خدمات مرنة وموثوقة لضمان تجربة احترافية، سلسة، وبأسعار تنافسية.',
     'hero.testimonials': 'آراء العملاء',
     "RECEPTION AND DELIVERY":' الاستقبال والتوصيل من وإلى المطار',
     'HOURLY CAR RENTALS WITH A DRIVER':'تأجير السيارات بالساعة مع سائق',

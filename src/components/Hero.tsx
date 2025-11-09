@@ -120,7 +120,7 @@ export const Hero = () => {
       <button
         onClick={prevSlide}
         aria-label="Previous"
-        className={`hidden lg:block absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-30 p-2 lg:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
+        className={`hidden lg:block absolute left-2 lg:left-2 top-1/2 -translate-y-1/2 z-30 p-2 lg:p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
           theme === "dark"
             ? "bg-white/10 hover:bg-white/20 text-white border-white/20 shadow-lg"
             : "bg-white/20 hover:bg-white/30 text-white border-white/30 shadow-lg"
@@ -142,7 +142,7 @@ export const Hero = () => {
       </button>
 
       {/* Mobile & Tablet Navigation - Below content */}
-      <div className="lg:hidden absolute bottom-16 xs:bottom-20 left-0 right-0 z-30 flex items-center justify-around gap-5 xs:gap-5 px-4">
+      <div className="lg:hidden absolute bottom-16  xs:bottom-20 left-0 right-0 z-30 flex items-center justify-around gap-5 xs:gap-5 px-4">
         <button
           onClick={prevSlide}
           aria-label="Previous"
