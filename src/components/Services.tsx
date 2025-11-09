@@ -6,7 +6,7 @@ import serv4 from '../assets/serv4.webp';
 import serv1 from '../assets/serv1.webp';
 import serv2 from '../assets/serv2.webp';
 import serv3 from '../assets/serv3.webp';
-import serv6 from '../assets/Transport_cars/Transport Cars .jpg';
+import serv6 from '../assets/Transport_cars/Transport Cars.png';
 
 type Feature = { icon: React.ElementType; textKey: string; };
 type Service = { id: string; image: string; titleKey: string; subtitleKey: string; features: Feature[]; };
@@ -170,7 +170,12 @@ export default function Services() {
                   data-carousel-item
                   key={`${s.id}-${idx}`}
                   onClick={handleCardClick}
-                  className="flex-shrink-0 w-[85%] xs:w-[75%] sm:w-[60%] md:w-[45%] lg:w-[38%] xl:w-[32%] rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-slate-200/50 dark:border-slate-700/50 group snap-start"
+                  className="flex-shrink-0 w-[85%] xs:w-[75%] sm:w-[60%] md:w-[45%] lg:w-[38%] xl:w-[32%]
+             max-w-[400px] sm:max-w-[480px] md:max-w-[550px] lg:max-w-[600px] xl:max-w-[700px]
+             rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl
+             bg-white dark:bg-slate-800/90 backdrop-blur-sm overflow-hidden
+             transform transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02]
+             border border-slate-200/50 dark:border-slate-700/50 group snap-start"
                 >
                   <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
                     <img
@@ -181,17 +186,15 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-lg">
-                      <span className="text-xs font-bold text-[#800020]">
-                        {t("Premium")}
-                      </span>
+                      <span className="text-xs font-bold text-[#800020]">{t("Premium")}</span>
                     </div>
                   </div>
 
                   <div className="p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8">
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 group-hover:text-[#800020] transition-colors">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-slate-900 dark:text-slate-100 line-clamp-2 break-words group-hover:text-[#800020] transition-colors">
                       {t(s.titleKey)}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4 sm:mb-5 line-clamp-2">
+                    <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4 sm:mb-5 line-clamp-2 break-words">
                       {t(s.subtitleKey)}
                     </p>
 
@@ -203,7 +206,7 @@ export default function Services() {
                             <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg bg-[#800020] flex items-center justify-center shadow-md group-hover/item:scale-110 transition-transform">
                               <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-white" />
                             </div>
-                            <p className="text-xs sm:text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed pt-0.5 sm:pt-1">
+                            <p className="text-xs sm:text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed pt-0.5 sm:pt-1 break-words">
                               {t(f.textKey)}
                             </p>
                           </div>
@@ -213,17 +216,17 @@ export default function Services() {
 
                     <a
                       href="#contact"
-                      className="flex items-center justify-center mx-auto px-5 py-3 sm:px-6 sm:py-3 md:px-7 md:py-3 rounded-xl text-sm sm:text-base md:text-base bg-[#800020] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-fit sm:w-auto"
+                      className="flex items-center justify-center mx-auto px-5 py-3 sm:px-6 sm:py-3 md:px-7 md:py-3 rounded-xl text-sm sm:text-base md:text-base
+                 bg-[#800020] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-fit sm:w-auto"
                       onClick={(e) => {
                         if (dragState.current.isDragging) e.preventDefault();
                       }}
                     >
                       {t("book Now")}
                     </a>
-
-
                   </div>
                 </article>
+
               ))}
             </div>
           </div>
