@@ -18,6 +18,7 @@ export const Navbar = () => {
   const navLinks = [
     { id: 'About', key: 'about' },
     { id: 'services', key: 'services' },
+     { id: 'Available cars', key: 'Available cars' },
     { id: 'testimonials', key: 'Testimonials' },
     { id: 'contact', key: 'contact' }
   ];
