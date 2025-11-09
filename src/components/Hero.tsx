@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import heroCar1 from "@/assets/hero-car-1.jpg";
-import heroCar2 from "@/assets/luxury/Land Rover.png";
+import heroCar2 from "@/assets/Land Rover.png";
 import heroCar3 from "@/assets/hero-car-3.jpg";
 import MercedesBenz from "../assets/Mercedes-Benz.jpg";
 

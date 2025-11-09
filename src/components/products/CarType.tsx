@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowRight, Calendar } from 'lucide-react';
+// import { ArrowRight, Calendar } from 'lucide-react';
+
+const message = encodeURIComponent('مرحباً! أود الاستفسار عن تأجير السيارات.');
 
 interface Props {
   image: string;
   title: string;
   textButton:string;
-  link: string;
-  target: string;
   onClick?: () => void;
   onBookNow?: () => void;
   icon: React.ReactNode;
@@ -16,8 +16,6 @@ const CarType:React.FC<Props> = ({
   image, 
   title, 
    textButton,
-   target,
-  link = "#", 
   icon
 }) =>{
   return (
@@ -42,12 +40,12 @@ const CarType:React.FC<Props> = ({
         
         <div className="flex flex-col xs:flex-row gap-3">
           <a
-            href={link}
-            target={target}
+            href={`https://wa.me/+966554118873?text=${message}`}
+            target={'_blank'}
             className="flex-1 inline-flex items-center justify-center gap-4 px-4 sm:px-6 py-3 bg-gradient-to-r from-[#800020] to-[#a82e3e] hover:from-[#660019] hover:to-[#8a2635] text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
            
-            <span className="text-base sm:text-[18px] ">{textButton}</span>
+            <span className="text-base sm:text-[19px] ">{textButton}</span>
              {icon}
            
           </a>

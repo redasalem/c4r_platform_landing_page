@@ -1,13 +1,12 @@
 import CarType from './CarType';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Luxury from '../../assets/luxury/Luxury1.png';
-import Sedan from '../../assets/Sedan/Sedan.png';
+import Luxury from '../../assets/luxury/BMW 7 Series.png';
+import Sedan from '../../assets/Sedan/torsue.jpg';
 import Economy from '../../assets/Econmey/Economy.png';
 import Transport from '../../assets/Transport_cars/Transport Cars .jpg';
-import backUp from '../../assets/Back/backUp.png';
-import JeepsCars from '../../assets/GebCar/GebCar.png';
-import { ArrowBigLeft } from 'lucide-react';
-
+import backUp from '../../assets/Back/Jeep-Router.jpg';
+import JeepsCars from '../../assets/GebCar/Tahoe.webp';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 
 
@@ -19,37 +18,33 @@ export const Products = () => {
       id: 1,
       title:'Luxury cars',
       image:Luxury,
-      link:'/Luxury',
+      
+      
     },
     {
       id: 2,
       title: 'Sedan cars',
       image:Sedan,
-      link:'/Sedan',
     },
     {
       id: 3,
       title: 'Economy cars',
       image:Economy,
-      link:'/Econmey',
     },
     {
       id: 4,
       title:'Transport cars',
       image:Transport,
-      link:'/TransportCars',
     },
     {
       id: 5,
       title: 'Backup cars',
       image:backUp,
-      link:'/Backup',
     },
     {
       id: 6,
       title:'Jeeps Cars',
       image:JeepsCars,
-      link:'/Jeeps',
     },
   ];
 
@@ -78,10 +73,8 @@ export const Products = () => {
               key={car.id}
               image={car.image}
               title={t(car.title)}
-              textButton={t('vist galery')}
-              link={car.link}
-              icon={<ArrowBigLeft className="w-4 h-4 sm:w-5 sm:h-5" />}
-              target="_self"
+             textButton={t("book Now")}
+              icon={<WhatsAppIcon className="w-5 h-5 mr-3 sm:w-5 sm:h-5 text-green-500" />}
               
             />
           ))}

@@ -35,12 +35,12 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/Luxury" element={<LuxuryPage />} />
+            {/* <Route path="/Luxury" element={<LuxuryPage />} />
             <Route path="/Sedan" element={<SedanPage />} />
              <Route path="/Econmey" element={<EconmeyPage />} />
                <Route path="/TransportCars" element={<TransportCarsPage />} />
                  <Route path="/Backup" element={<BackupPage />} />
-                   <Route path="/Jeeps" element={<JeepsPage />} />
+                   <Route path="/Jeeps" element={<JeepsPage />} /> */}
 
           </Routes>
         </BrowserRouter>
