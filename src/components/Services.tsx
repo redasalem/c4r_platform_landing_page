@@ -13,7 +13,7 @@ type Service = { id: string; image: string; titleKey: string; subtitleKey: strin
 
 const SERVICES: Service[] = [
   {
-    id: "flex-plans", image:serv1,
+    id: "flex-plans", image: serv1,
     titleKey: "DAILY OR MONTHLY CAR RENTALS",
     subtitleKey: "Flexible plans to suit your lifestyle and various needs",
     features: [
@@ -23,7 +23,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "quick-commutes", image:serv2,
+    id: "quick-commutes", image: serv2,
     titleKey: "HOURLY CAR RENTALS WITH A DRIVER",
     subtitleKey: "Ideal for quick commutes, meetings and private trips",
     features: [
@@ -33,9 +33,9 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "premium-fleet", image:serv4,
+    id: "premium-fleet", image: serv4,
     titleKey: "CAR AVAILABILITY IN BULK",
-    subtitleKey:"Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
+    subtitleKey: "Customized solutions for companies and entities that need a highly efficient fleet of vehicles",
     features: [
       { icon: Car, textKey: "Diverse and luxurious fleet" },
       { icon: Users, textKey: "Vehicles equipped with the latest features" },
@@ -43,7 +43,7 @@ const SERVICES: Service[] = [
     ],
   },
   {
-    id: "concierge-service", image:serv5,
+    id: "concierge-service", image: serv5,
     titleKey: "RECEPTION AND DELIVERY",
     subtitleKey: "A comfortable start to your trip, with punctual service",
     features: [
@@ -52,17 +52,17 @@ const SERVICES: Service[] = [
       { icon: Clock, textKey: "Flexible schedules for your convenience" },
     ],
   },
- {
-  id: "transport-service",
-  image: serv6,
-  titleKey: "TRANSPORT SERVICE",
-  subtitleKey: "Enjoy a smooth and reliable group transport experience",
-  features: [
-    { icon: Home, textKey: "Pick-up from your chosen location" },
-    { icon: Car, textKey: "Spacious and comfortable vehicles for every group size" },
-    { icon: Clock, textKey: "On-time service with flexible scheduling" },
-  ],
-},
+  {
+    id: "transport-service",
+    image: serv6,
+    titleKey: "TRANSPORT SERVICE",
+    subtitleKey: "Enjoy a smooth and reliable group transport experience",
+    features: [
+      { icon: Home, textKey: "Pick-up from your chosen location" },
+      { icon: Car, textKey: "Spacious and comfortable vehicles for every group size" },
+      { icon: Clock, textKey: "On-time service with flexible scheduling" },
+    ],
+  },
 ];
 
 export default function Services() {
@@ -146,7 +146,7 @@ export default function Services() {
           >
             <ChevronLeft className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#800020]" />
           </button>
-          
+
           <button
             onClick={scrollRight}
             className="absolute -right-3 sm:-right-4 md:-right-5 lg:-right-7 top-1/2 -translate-y-1/2 z-20 p-1 sm:p-3 md:p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-[#800020]/30 dark:border-[#800020]/50 translate-x-2 sm:translate-x-4 md:translate-x-6"
@@ -213,11 +213,15 @@ export default function Services() {
 
                     <a
                       href="#contact"
-                      className="block w-fit sm:w-full text-center mx-auto px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base bg-[#800020] hover:bg-[#660019] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                      onClick={(e) => { if (dragState.current.isDragging) e.preventDefault(); }}
+                      className="flex items-center justify-center mx-auto px-5 py-3 sm:px-6 sm:py-3 md:px-7 md:py-3 rounded-xl text-sm sm:text-base md:text-base bg-[#800020] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-fit sm:w-auto"
+                      onClick={(e) => {
+                        if (dragState.current.isDragging) e.preventDefault();
+                      }}
                     >
                       {t("book Now")}
                     </a>
+
+
                   </div>
                 </article>
               ))}
