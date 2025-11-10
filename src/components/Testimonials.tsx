@@ -6,43 +6,23 @@ import toast, { Toaster } from 'react-hot-toast';
 import { db } from '../../firebase-config';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 
-import client1 from '@/assets/client-1.jpg';
-import client2 from '@/assets/client-2.jpg';
-import client3 from '@/assets/client-3.jpg';
-import client4 from '@/assets/client-4.jpg';
-import client5 from '@/assets/client-5.jpg';
-import client6 from '@/assets/client-6.jpg';
-
-const initialTestimonials = [
-  { id: 1, name: 'أحمد المنصوري', role: 'رجل أعمال', image: client1, rating: 5, text: 'الخدمة ممتازة! السيارة كانت في حالة رائعة وعملية الحجز كانت سلسة جدًا. أنصح بها بشدة للمسافرين للأعمال.', color: 'from-red-600 to-red-500' },
-  { id: 2, name: 'سارة محمد', role: 'أخصائية سياحة', image: client2, rating: 4, text: 'جعلت رحلتي السياحية خالية من التوتر. السيارة كانت فاخرة والدعم كان ممتازًا. سأستخدمها بالتأكيد مرة أخرى!', color: 'from-red-700 to-red-500' },
-  { id: 3, name: 'عمر حسن', role: 'رائد أعمال', image: client3, rating: 5, text: 'مجموعة رائعة من السيارات وأسعار منافسة. الفريق بذل جهده لتلبية احتياجاتي. خمس نجوم!', color: 'from-red-500 to-red-400' },
-  { id: 4, name: 'محمد علي', role: 'مدير مشروع', image: client4, rating: 5, text: 'تجربة رائعة من البداية للنهاية. السيارة نظيفة ومريحة، والخدمة ممتازة للغاية.', color: 'from-red-600 to-red-400' },
-  { id: 5, name: 'محمد سامي', role: 'مستشار سياحي', image: client5, rating: 4, text: 'أعجبني مستوى الاحترافية في التعامل مع العملاء، وسأوصي بهم لكل أصدقائي وعائلتي.', color: 'from-red-700 to-red-500' },
-  { id: 6, name: 'محمد احمد', role: 'صانع محتوى', image: client6, rating: 5, text: 'خدمة ممتازة وسيارات فاخرة. كل شيء كان منظم وسهل، تجربة لا تُنسى!', color: 'from-red-500 to-red-400' },
-];
-
 const colors = ['from-red-600 to-red-500', 'from-red-700 to-red-500', 'from-red-500 to-red-400', 'from-red-600 to-red-400', 'from-red-700 to-red-500', 'from-red-500 to-red-400'];
-
-
-
-
 
 export const Testimonials = () => {
   const { t } = useLanguage();
-  const [testimonials, setTestimonials] = useState(initialTestimonials);
+  const [testimonials, setTestimonials] = useState<any[]>([]);
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [formData, setFormData] = useState({ name: '', role: '', text: '', rating: 5 });
+  const [formData, setFormData] = useState({ name: '', text: '', rating: 5 });
   const [showSuccess, setShowSuccess] = useState(false);
 
-  // جلب التعليقات من Firebase
+  // Fetch testimonials from Firebase only
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'testimonials'));
         const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-       if (data.length > 0) setTestimonials(prev => [...prev, ...data]);
+        setTestimonials(data);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
       }
@@ -52,17 +32,16 @@ export const Testimonials = () => {
 
   // Auto play
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || testimonials.length === 0) return;
     const interval = setInterval(() => setCurrent(prev => (prev + 1) % testimonials.length), 5000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
 
-  // التنقل بين التعليقات
   const next = () => { setIsAutoPlaying(false); setCurrent(prev => (prev + 1) % testimonials.length); };
   const prev = () => { setIsAutoPlaying(false); setCurrent(prev => (prev - 1 + testimonials.length) % testimonials.length); };
   const goToSlide = (index: number) => { setIsAutoPlaying(false); setCurrent(index); };
 
-  // إرسال تعليق جديد إلى Firebase
+  // Submit new review
   const submitReview = async () => {
     const newTestimonial = {
       id: Date.now(),
@@ -75,7 +54,7 @@ export const Testimonials = () => {
       await addDoc(collection(db, 'testimonials'), newTestimonial);
       setTestimonials(prev => [...prev, newTestimonial]);
       setCurrent(testimonials.length);
-      setFormData({ name: '', role: '', text: '', rating: 5 });
+      setFormData({ name: '', text: '', rating: 5 });
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 3000);
     } catch (error) {
@@ -114,75 +93,59 @@ export const Testimonials = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-7 text-red-700 dark:text-red-600">
             {t('testimonials.title')}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            {t('testimonials.subtitle')}
-          </p>
         </div>
 
         {/* Carousel */}
-        <div className="max-w-4xl mx-auto relative mb-8 sm:mb-12 md:mb-16">
-          <Card className="shadow-xl sm:shadow-2xl border-2 border-border/50 backdrop-blur-sm bg-card/95 overflow-hidden group hover:shadow-3xl transition-all duration-500">
-            <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12 relative">
-              <div className="absolute top-4 sm:top-8 right-4 sm:right-8 opacity-10">
-                <Quote className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32" />
-              </div>
-              <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 relative z-10">
-                <div className={`relative bg-gradient-to-r ${testimonials[current].color} p-1 rounded-full flex-shrink-0`}>
-                  <img
-                    src={testimonials[current].image}
-                    alt={testimonials[current].name}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-background shadow-card"
-                  />
+        {testimonials.length > 0 && (
+          <div className="max-w-4xl mx-auto relative mb-8 sm:mb-12 md:mb-16">
+            <Card className="shadow-xl sm:shadow-2xl border-2 border-border/50 backdrop-blur-sm bg-card/95 overflow-hidden group hover:shadow-3xl transition-all duration-500">
+              <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12 relative">
+                <div className="absolute top-4 sm:top-8 right-4 sm:right-8 opacity-10">
+                  <Quote className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32" />
                 </div>
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-sm sm:text-base md:text-lg text-foreground mb-4 sm:mb-6 italic">
-                    "{testimonials[current].text}"
-                  </p>
-                  <div className="flex flex-col md:flex-row items-center gap-2 sm:gap-3 justify-center md:justify-start">
-                    <div>
+                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 relative z-10">
+                  <div className={`relative bg-gradient-to-r ${testimonials[current].color} p-1 rounded-full flex-shrink-0`}>
+                    <img
+                      src={testimonials[current].image}
+                      alt={testimonials[current].name}
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-background shadow-card"
+                    />
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <p className="text-sm sm:text-base md:text-lg text-foreground mb-4 sm:mb-6 italic">
+                      "{testimonials[current].text}"
+                    </p>
+                    <div className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                       <p className="font-bold text-base sm:text-lg">{testimonials[current].name}</p>
-                      <p className="text-sm sm:text-base text-muted-foreground">{testimonials[current].role}</p>
-                    </div>
-                    <div className="flex gap-1">
-                      {[...Array(testimonials[current].rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
-                      ))}
+                      <div className="flex gap-1">
+                        {[...Array(testimonials[current].rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* Navigation */}
-          <button
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300"
-          >
-            <ChevronLeft className="w-3 h-3 sm:w-6 sm:h-6" />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300"
-          >
-            <ChevronRight className="w-3 h-3 sm:w-6 sm:h-6" />
-          </button>
+            <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
+              <ChevronLeft className="w-3 h-3 sm:w-6 sm:h-6" />
+            </button>
+            <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 bg-red-600 text-white p-2 sm:p-3 rounded-full hover:scale-110 transition-all duration-300">
+              <ChevronRight className="w-3 h-3 sm:w-6 sm:h-6" />
+            </button>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${
-                  index === current
-                    ? 'w-6 sm:w-8 bg-red-600 shadow-lg'
-                    : 'w-2 sm:w-3 bg-muted hover:bg-muted-foreground/50'
-                }`}
-              />
-            ))}
+            <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 sm:h-3 rounded-full transition-all duration-500 ${index === current ? 'w-6 sm:w-8 bg-red-600 shadow-lg' : 'w-2 sm:w-3 bg-muted hover:bg-muted-foreground/50'}`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Form */}
         <div className="max-w-3xl mx-auto">
@@ -211,18 +174,6 @@ export const Testimonials = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2">{t('Role')}</label>
-                  <input
-                    type="text"
-                    value={formData.role}
-                    onChange={e => setFormData({ ...formData, role: e.target.value })}
-                    required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl bg-input border-2 border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/20 transition-all duration-300"
-                    placeholder={t('Role')}
-                  />
-                </div>
-
-                <div>
                   <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2 sm:mb-3">{t('Rating')}</label>
                   <div className="flex gap-1.5 sm:gap-2 justify-center sm:justify-start">
                     {[1, 2, 3, 4, 5].map(star => (
@@ -233,9 +184,7 @@ export const Testimonials = () => {
                         className="transition-transform hover:scale-125"
                       >
                         <Star
-                          className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-colors ${
-                            star <= formData.rating ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'
-                          }`}
+                          className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 transition-colors ${star <= formData.rating ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`}
                         />
                       </button>
                     ))}

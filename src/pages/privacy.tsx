@@ -104,7 +104,7 @@ export const PrivacyPolicy = () => {
                     {t('officialChannels')}
                   </h3>
                   <div className="space-y-2 text-slate-700 dark:text-slate-300">
-                    <p><strong>{t('whatsapp')}:</strong> <a href="https://wa.me/966554118873" className="text-[#800020] hover:underline">+966554118873</a></p>
+                    <p><strong>{t('whatsapp')}:</strong> <a target='_blank' href="https://wa.me/966554118873" className="text-[#800020] hover:underline">+966554118873</a></p>
                     <p><strong>{t('email')}:</strong> <a href="mailto:Team@C4Rplatform.com" className="text-[#800020] hover:underline">Team@C4Rplatform.com</a></p>
                   </div>
                   <p className="text-slate-600 dark:text-slate-400 mt-3 italic">
@@ -205,7 +205,7 @@ export const PrivacyPolicy = () => {
                   </h3>
                   <p className="leading-relaxed mb-3">{t('contactDesc')}</p>
                   <div className="space-y-2">
-                    <p>📞 <strong>{t('whatsapp')}:</strong> <a href="https://wa.me/966554118873" className="text-[#800020] hover:underline">+966554118873</a></p>
+                    <p>📞 <strong>{t('whatsapp')}:</strong> <a target='_blank' href="https://wa.me/966554118873" className="text-[#800020] hover:underline">+966554118873</a></p>
                     <p>📧 <strong>{t('email')}:</strong> <a href="mailto:Team@C4Rplatform.com" className="text-[#800020] hover:underline">Team@C4Rplatform.com</a></p>
                   </div>
                 </div>

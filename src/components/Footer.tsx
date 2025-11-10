@@ -44,35 +44,30 @@ export const Footer = () => {
             </p>
           </div> */}
 
-         {/* Partners Carousel - Static Version */}
-<div
-  className="w-full max-w-full overflow-hidden"
-  style={{ animationDelay: "0.2s" }}
->
-  <h2 className="font-bold text-center md:text-4xl text-2xl mb-12 text-red-700 dark:text-red-600">
-    {t("Our Partners")}
-  </h2>
-  <div className="relative">
-    <div className="flex gap-8 justify-center flex-wrap">
-      {partners.map((logo, index) => (
-        <div
-          key={index}
-          className="flex-shrink-0"
-        >
-          <div className="relative">
-            <img
-              src={logo}
-              alt={`Partner ${index + 1}`}
-              className="relative h-32 w-24 md:h-40 md:w-36 object-contain mb-3 rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
-            />
+          {/* Partners Carousel - Static Version */}
+          <div
+            className="w-full max-w-full overflow-hidden"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <h2 className="font-bold text-center md:text-4xl text-2xl mb-12 text-red-700 dark:text-red-600">
+              {t("Our Partners")}
+            </h2>
+            <div className="relative">
+              <div className="flex gap-8 justify-center flex-wrap">
+                {partners.map((logo, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <div className="relative">
+                      <img
+                        src={logo}
+                        alt={`Partner ${index + 1}`}
+                        className="relative h-32 w-24 md:h-40 md:w-36 object-contain mb-3 rounded-2xl border-2 border-border/50 bg-card/50 backdrop-blur-sm p-3 shadow-lg"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
-
 
           {/* Quick Links */}
           <div
@@ -125,20 +120,27 @@ export const Footer = () => {
               href="https://x.com/C4R_Platform"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110"
+              className="group relative p-4 rounded-xl bg-slate-950 text-white hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110"
             >
-              <Twitter className="w-6 h-6 relative z-10" />
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
               <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
-              href="https://www.instagram.com/C4R_Platform/#"
+              href="https://www.instagram.com/C4R_Platform/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 text-white hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-110"
+              className="group relative p-4 rounded-xl text-white hover:shadow-2xl hover:scale-110 transition-all duration-300"
+              style={{
+                background:
+                  "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)",
+              }}
             >
               <Instagram className="w-6 h-6 relative z-10" />
               <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
+
             <a
               href="https://www.tiktok.com/@C4R.Platform"
               target="_blank"
