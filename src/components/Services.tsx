@@ -47,8 +47,8 @@ const SERVICES: Service[] = [
     titleKey: "RECEPTION AND DELIVERY",
     subtitleKey: "A comfortable start to your trip, with punctual service",
     features: [
-      { icon: Home, textKey: "Car delivered to your location" },
-      { icon: Car, textKey: "Receive and start your journey with ease" },
+      { icon: Home, textKey: "Professional drivers and easier vehicles"},
+      { icon: Car, textKey: "Our commitment to punctuality and travel comfort" },
       { icon: Clock, textKey: "Flexible schedules for your convenience" },
     ],
   },
