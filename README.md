@@ -54,7 +54,6 @@ c4r-platform/
 
 1. استنساخ المشروع:
 ```bash
-git clone <رابط المشروع>
 cd c4r-platform
 
 
